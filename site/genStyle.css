@@ -1,0 +1,164 @@
+/* general every-page style */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+} 
+/*the above is so input boxes do not exceed 
+their parent containers when they have padding*/
+
+body{
+	font-family: 'Josefin Slab', serif;
+	margin: 0px;
+/*	height: 100%;*/
+}
+#box{ /*this is for the header and nav bar only*/
+	display: flex;
+	flex: 0 1 auto;
+	flex-direction: column;
+	margin-bottom: 20px;
+}
+#nav {
+	position: relative;
+	font-family: 'Amatic SC', cursive;
+	font-size: 26pt;
+	text-align: center;
+	font-weight: 700;
+	margin-right: 14%;
+	margin-left: auto;
+}
+#nav a{
+	color: black;
+	text-decoration: none;
+}
+#nav #artwork{
+	margin-right: 20px;
+}
+#nav #shop{
+	margin-right: 20px;
+	margin-left: 20px;
+}
+#nav #contact{
+	margin-left: 20px;
+}
+#nav img{
+	height: .2em;
+	margin-bottom: 7px;
+}
+#nav a:hover {
+		color: #ff7800;
+}
+#nav .page_title{
+	color: #ff7800;
+}
+#annie {
+	position: relative;
+	text-align: center;
+	font-size: 74pt;
+	font-family: 'Amatic SC', cursive;
+	font-weight: 400;
+}
+.bar1 {
+	position: absolute;
+	background-color: #ffddc7;
+	height: 30pt;
+	width: 97%;
+	border-radius: 5px;
+	right: 0;
+	top: 35pt;
+
+}
+.bar2 {
+	width: 88%;
+	left: 0;
+	top: 95pt;
+}
+.corners{
+	border-radius: 0px;
+	width: 10%;
+}
+#inner_box{
+	min-height: 100%;
+    padding-bottom: 75px;
+}
+#footer{
+	position: static;
+	text-align: center;
+	width: 100%;
+	bottom:0;
+}
+
+@media (min-width: 992px) {
+	#box{
+		display: grid;
+		grid-template-areas: 
+		'annie nav';
+	}
+	#nav {
+		position: relative;
+		font-family: 'Amatic SC', cursive;
+		font-size: 36pt;
+/*		text-align: center;*/
+		font-weight: 700;
+		margin-top: 57px;
+/*		margin-top: -80px;
+		margin-right: -800px;*/
+		display: grid;
+		grid-template-areas: 'artwork dot1 shop dot2 contact';
+		margin-left: auto;
+		margin-right: 7%;
+	}
+	#nav a{
+		color: black;
+		text-decoration: none;
+/*		float: right;*/
+	}
+	#nav #artwork{
+		margin: 0px/*top*/ 2.5vw/*right*/ 0px/*bottom*/ 0px/*left*/;
+	}
+	#nav #shop{
+		margin: 0px/*top*/ 2.5vw/*right*/ 0px/*bottom*/ 2.5vw/*left*/;
+	}
+	#nav #contact{
+		margin: 0px/*top*/ -25px/*right*/ 0px/*bottom*/ 2.5vw/*left*/;
+	}
+	#nav img{
+		height: .2em;
+		margin-top: 28px;
+	}
+	#nav a:hover {
+			color: #ff7800;
+	}
+	#nav #page_title{
+		color: #ff7800;
+	}
+	#annie {
+		position: relative;
+		text-align: left;
+		margin-left: 30px;
+		font-size: 100pt;
+		font-family: 'Amatic SC', cursive;
+		font-weight: 400;
+	}
+	.bar1 {
+		position: absolute;
+		background-color: #ffddc7;
+		height: 40pt;
+		width: 97%;
+		border-radius: 5px;
+		right: 25px;
+		top: 47pt;
+
+	}
+	.bar2 {
+		width: 88%;
+		left: 0;
+		top: 95pt;
+		background-color: #ffddc700;
+	}
+	.corners{
+		border-radius: 0px;
+		background-color: #ffddc700;
+
+	}

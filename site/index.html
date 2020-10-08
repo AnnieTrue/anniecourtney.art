@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!--artwork page-->
+	<title>Annie Courtney</title>
+	<link rel = "stylesheet" type = "text/css" href = "genStyle.css" />
+	<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Josefin+Slab&display=swap" rel="stylesheet">
+</head>
+<style>
+	#artworks{
+		margin-top: 40px;
+	}
+	#artworks img{
+		width: 100%;
+		height: auto;
+	}
+	#artworks video{
+		width: 100%;
+		height: auto;
+	}
+
+	#back2top {
+	  display: none;
+	  position: fixed;
+	  bottom: 20px;
+	  right: 30px;
+	  z-index: 99;
+	  border: none;
+	  outline: none;
+	  background-color: #ff780050;
+	  color: #00000050;
+	  cursor: pointer;
+	  padding: 5px;
+	  border-radius: 5px;
+	  font-family: 'Amatic SC', serif;
+	  font-size: 30pt;
+	}
+
+	#back2top:hover {
+	  background-color: #ff7800;
+	  color: #000000;
+	}
+
+</style>
+<body>
+	<div id="box">
+		<div class="bar1"></div>
+		<div class="bar1 corners"></div>
+  		<a id="annie">Annie Courtney</a>
+  		<div class="bar1 bar2"></div>
+  		<div class="bar1 bar2 corners"></div>
+  		<div id="nav">
+  			<a id="artwork" class="page_title" href="index.html" target="_self">artwork</a>
+  			<img id="dot1"src="assets/dot.svg">
+  			<a id="shop" href="shop.html" target="_self">shop</a>
+  			<img id="dot2" src="assets/dot.svg">
+  			<a id="contact" href="contact.html">contact me</a>
+		</div>
+	</div>
+<div id="inner_box">
+<!--page specific-->
+	<div id="artworks">
+		<img src="assets/artwork/En Route.jpg">
+		<img src="assets/artwork/Losing My Grip.jpg">
+		<img src="assets/artwork/nothing more.jpg">
+		<img src="assets/artwork/fear.jpg">
+		<img src="assets/artwork/dahaht.jpg">
+		<video controls><source src="assets/artwork/love.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+		<img src="assets/artwork/photosynthesmize.jpg">
+		<video controls src="assets/artwork/scream.mov" type="video/mov">Your browser does not support the video tag.</video>
+		<video controls><source src="assets/artwork/tcaoy.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+		<img src="assets/artwork/mouth.gif">
+		<video controls src="assets/artwork/ijwsp.mov" type="video/mov">Your browser does not support the video tag.</video>
+		<img src="assets/artwork/selfportrait.png">
+		<video controls src="assets/artwork/Among the Moai.mov" type="video/mov">Your browser does not support the video tag.</video>
+		<video controls><source src="assets/artwork/spider.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+		<img src="assets/artwork/earthling.gif">
+	</div>
+
+	<button onclick="topFunction()" id="back2top" title="Go to top">&#x2191;</button>
+<!-- ^^^ page specific ^^^ -->
+</div>
+	<div id="footer">All work &#169; Annie Courtney unless otherwise  noted.</div>
+
+<script>
+//Get the button
+var mybutton = document.getElementById("back2top");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+
+</script>
+
+</body>
+</html>
