@@ -25,9 +25,9 @@ body{
 	font-size: 9vw;
 	text-align: center;
 	font-weight: 700;
-	margin-right: 15%;
+	margin-right: 15vw;
 	margin-left: auto;
-	margin-top: 2pt;
+	margin-top: 1vw;
 }
 #nav a{
 	color: black;
@@ -45,7 +45,7 @@ body{
 }
 #nav img{
 	height: .2em;
-	margin-bottom: 7px;
+	margin-bottom: 1.8vw;
 }
 #nav a:hover {
 		color: #ff7800;
@@ -63,17 +63,17 @@ body{
 .bar1 {
 	position: absolute;
 	background-color: #ffddc7;
-	height: 34pt;
-	width: 97%;
-	border-radius: 5px;
+	height: 8vw;
+	width: 95vw;
+	border-radius: 1vw;
 	right: 0;
-	top: 35pt;
+	top: 9vw;
 
 }
 .bar2 {
-	width: 88%;
+	width: 88vw;
 	left: 0;
-	top: 105pt;
+	top: 27vw;
 }
 .corners{
 	border-radius: 0px;
@@ -81,17 +81,17 @@ body{
 }
 #inner_box{
 	min-height: 100%;
-    padding-bottom: 75px;
+    padding-bottom: 15vw;
 }
 #footer{
 	position: static;
 	text-align: center;
-	font-size: 15%;
+	font-size: 4vw;
 	width: 100%;
 	bottom:0;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 992px) {
 	#box{
 		display: grid;
 		grid-template-areas: 
