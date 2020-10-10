@@ -22,30 +22,30 @@ body{
 #nav {
 	position: relative;
 	font-family: 'Amatic SC', cursive;
-	font-size: 9vw;
+	font-size: 8.8vw;
 	text-align: center;
 	font-weight: 700;
-	margin-right: 15vw;
+	margin-right: 13.5vw;
 	margin-left: auto;
-	margin-top: 1vw;
+	margin-top: .49vw;
 }
 #nav a{
 	color: black;
 	text-decoration: none;
 }
 #nav #artwork{
-	margin-right: .2em;
+	margin-right: 1.5vw;
 }
 #nav #shop{
-	margin-right: .2em;
-	margin-left: .2em;
+	margin-right: 1.8vw;
+	margin-left: 1.5vw;
 }
 #nav #contact{
-	margin-left: .2em;
+	margin-left: 1.7vw;
 }
 #nav img{
-	height: .2em;
-	margin-bottom: 1.8vw;
+	height: 1.75vw;
+	margin-bottom: 1.7vw;
 }
 #nav a:hover {
 		color: #ff7800;
@@ -56,14 +56,14 @@ body{
 #annie {
 	position: relative;
 	text-align: center;
-	font-size: 19vw;
+	font-size: 19.2vw;
 	font-family: 'Amatic SC', cursive;
 	font-weight: 400;
 }
 .bar1 {
 	position: absolute;
 	background-color: #ffddc7;
-	height: 8vw;
+	height: 8.4vw;
 	width: 95vw;
 	border-radius: 1vw;
 	right: 0;
@@ -73,7 +73,7 @@ body{
 .bar2 {
 	width: 88vw;
 	left: 0;
-	top: 27vw;
+	top: 26.5vw;
 }
 .corners{
 	border-radius: 0px;
@@ -100,21 +100,17 @@ body{
 	#nav {
 		position: relative;
 		font-family: 'Amatic SC', cursive;
-		font-size: 36pt;
-/*		text-align: center;*/
+		font-size: 3.8vw;
 		font-weight: 700;
-		margin-top: 57px;
-/*		margin-top: -80px;
-		margin-right: -800px;*/
+		margin-top: 3.8vw;
+		margin-left: auto;
+		margin-right: 2.3vw;
 		display: grid;
 		grid-template-areas: 'artwork dot1 shop dot2 contact';
-		margin-left: auto;
-		margin-right: 10%;
 	}
 	#nav a{
 		color: black;
 		text-decoration: none;
-/*		float: right;*/
 	}
 	#nav #artwork{
 		margin: 0px/*top*/ 2.5vw/*right*/ 0px/*bottom*/ 0px/*left*/;
@@ -123,11 +119,11 @@ body{
 		margin: 0px/*top*/ 2.5vw/*right*/ 0px/*bottom*/ 2.5vw/*left*/;
 	}
 	#nav #contact{
-		margin: 0px/*top*/ -25px/*right*/ 0px/*bottom*/ 2.5vw/*left*/;
+		margin: 0px/*top*/ 0vw/*right*/ 0px/*bottom*/ 2.5vw/*left*/;
 	}
 	#nav img{
-		height: .2em;
-		margin-top: 28px;
+		height: .8vw;
+		margin-top: 2.1vw;
 	}
 	#nav a:hover {
 			color: #ff7800;
@@ -138,29 +134,29 @@ body{
 	#annie {
 		position: relative;
 		text-align: left;
-		margin-left: 30px;
-		font-size: 100pt;
+		margin-left: 2vw;
+		font-size: 9.5vw;
 		font-family: 'Amatic SC', cursive;
 		font-weight: 400;
 	}
 	.bar1 {
 		position: absolute;
 		background-color: #ffddc7;
-		height: 40pt;
-		width: 97%;
-		border-radius: 5px;
-		right: 25px;
-		top: 47pt;
+		height: 4.2vw;
+		width: 97vw;
+		border-radius: .35vw;
+		right: 1.5vw;
+		top: 4.3vw;
 
 	}
 	.bar2 {
-		width: 88%;
-		left: 0;
-		top: 95pt;
-		background-color: #ffddc700;
+		background-color: #ffddc700;/*completely transparent*/
 	}
 	.corners{
-		border-radius: 0px;
-		background-color: #ffddc700;
+		background-color: #ffddc700;/*completely transparent*/
 
 	}
+	#footer{
+		font-size: 1.5vw;
+	}
+}
