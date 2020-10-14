@@ -92,7 +92,7 @@ body{
 	padding-bottom: 1vw;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 992px), (orientation: landscape) {
 	#box{
 		display: grid;
 		grid-template-areas: 
