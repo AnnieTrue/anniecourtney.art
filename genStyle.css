@@ -22,12 +22,12 @@ body{
 #nav {
 	position: relative;
 	font-family: 'Amatic SC', cursive;
-	font-size: 8.8vw;
+	font-size: 8vw;
 	text-align: center;
 	font-weight: 700;
 	margin-right: 13.5vw;
 	margin-left: auto;
-	margin-top: .49vw;
+	margin-top: 1vw;
 }
 #nav a{
 	color: black;
