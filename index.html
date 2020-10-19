@@ -32,7 +32,6 @@
 	  position: fixed;
 	  bottom: 2vw;
 	  right: 2vw;
-	  z-index: 99;
 	  border: none;
 	  outline: none;
 	  color: #ff780075;
@@ -44,6 +43,137 @@
 	}
 
 	#back2top:hover {
+	  color: #ff7800;
+	}
+
+/*lightbox below*/
+
+	/* the little icons of all the images in the lightbox*/
+	.column { 
+	  float: left;
+	  width: 10%;
+	  margin-left: 2vw;
+	}
+
+	.title-container {
+	  text-align: center;
+	  margin-top: -10vw;
+	  color: white;
+	  font-size: 8vw;
+	  font-family: 'Amatic SC', cursive;
+	  font-weight: 700;
+	}
+
+	.caption-container{
+		text-align: center;
+	  margin-top: 0vw;
+	  margin-left: 7vw;
+	  margin-right: 7vw;
+	  color: white;
+	  font-size: 5vw;
+	  font-family: 'Josefin Slab', serif;
+	}
+
+	/*unselected little icons*/
+	.demo {
+	  opacity: .5;
+	}
+	/*selected little icon*/
+	.active,
+	.demo:hover {
+	  opacity: 1;
+	}
+
+	/* The Modal (background) */
+	.modal {
+	  display: none;
+	  position: fixed;
+	  z-index: 1;
+	  padding-top: 10vw;
+	  left: 0;
+	  top: 0;
+	  width: 100%;
+	  height: 100%;
+	  overflow: auto;
+	  background-color: rgba(0, 0, 0,  .95);
+
+	}
+
+	/* Modal Content */
+	.modal-content {
+	  position: relative;
+	  /*background-color: #000000;*/
+	  margin-top: 2vw;
+	 /* margin: auto;*/
+	  padding: 0;
+	  max-width: 100%;
+	  /*max-height: 50vw;*/
+	 /* max-width: 1200px;*/
+	}
+
+	/* The Close Button */
+	.close {
+	  color: white;
+	  position: absolute;
+	  top: 1vw;
+	  right: 3vw;
+	  font-size: 10vw;
+	  /*font-weight: bold;*/
+	}
+	.close:hover,
+	.close:focus {
+	  color: #ff7800;
+	  text-decoration: none;
+	}
+
+	/* Number text (1/3 etc) */
+	.numbertext {
+	  color: #ffffff50;
+	  font-size: 5vw;
+	  margin-top: -7vw;
+	  margin-left: 3vw;
+	  /*padding: 8px 12px;*/
+	  position: absolute;
+	}
+
+	.mySlides {
+	  display: none;
+	}
+
+	.cursor {
+	  cursor: pointer;
+	}
+
+	/* Next & previous buttons */
+	.prev,
+	.next {
+	  position: absolute;
+	  width: auto;
+	  padding: 1vw;
+	  margin-top: 0vw;
+	  color: white;
+	  font-family: 'Josefin Slab', serif;
+	  /*font-weight: bold;*/
+	  font-size: 5vw;
+/*	  transition: 0.6s ease;*/
+/*	  border-radius: 0 3px 3px 0*/;
+/*	  user-select: none;
+	  -webkit-user-select: none;*/
+	}
+	.prev{
+		left: 2vw;
+	}
+
+	/* Position the "next button" to the right */
+	.next {
+	  right: 2vw;
+	  /*border-radius: 3px 0 0 3px;*/
+	}
+
+	/* On hover, add a black background color with a little bit see-through */
+	.prev:hover,
+	.next:hover {
+		cursor: pointer;
 	  color: #ff7800;
 	}
 
@@ -185,22 +315,160 @@
 <div id="inner_box">
 <!--page specific-->
 	<div id="artworks">
-		<img id="flatbill" src="assets/artwork/En Route.JPG" alt="painting of a rose flatbill bird flying with human arms under her/his/their wings">
-		<img id="owl" src="assets/artwork/Losing My Grip.jpg" alt="painting of an owl sitting on a branch with human hands instead of talons">
-		<img id="raven" src="assets/artwork/nothing more.jpg" alt="painting of a crow/raven with a human eye">
-		<img id="fear" src="assets/artwork/fear.jpg" alt="paper cutout graphic of a hand partially covering an eye with the reflection of a monster hand in the eye">
-		<video id="love" controls><source src="assets/artwork/love.mp4" type="video/mp4" alt="animation of a girl getting her hair pushed behind her ear by someone out of frame, and then leaking pink goo from the eyes, nose, and mouth and falling over">Your browser does not support the video tag.</video>
-		<img id="braid" src="assets/artwork/dahaht.jpg" alt="sketchy illustration of a girl braiding her hair">
-		<img id="flower" src="assets/artwork/photosynthesmize.jpg" alt="illlustration of a flower with a human face">
-		<video id="scream" controls src="assets/artwork/scream.mov" type="video/mov" poster="assets/artwork/thumbnails/scream_cover.png" alt="animation of a scream switch being pulling inside a mouth">Your browser does not support the video tag.</video>
-		<video id="abstract" poster="assets/artwork/thumbnails/tcaoy_cover.png" controls><source src="assets/artwork/tcaoy.mp4" type="video/mp4" alt="animation of abstract light and colors">Your browser does not support the video tag.</video>
-		<img id="mouth" src="assets/artwork/mouth.gif" alt="animation of a mouth opeing and a beetle crawling on the tongue">
-		<video id="privacy" controls src="assets/artwork/ijwsp.mov" type="video/mov" alt="demo of an app where a spider creature gets scared if you make noise">Your browser does not support the video tag.</video>
-		<img id="self" src="assets/artwork/selfportrait.PNG" alt="digital drawing of a girl and bugs">
-		<video id="moai" controls src="assets/artwork/Among the Moai.mov" type="video/mov" alt="3d animation of a ufo bringing the statues of easter island to life">Your browser does not support the video tag.</video>
-		<video id="spider" poster="assets/artwork/thumbnails/spider_cover.png" controls><source src="assets/artwork/spider.mp4" type="video/mp4" alt="3d animation of a spider with a human-like head dancing">Your browser does not support the video tag.</video>
-		<img id="earthling" src="assets/artwork/earthling.gif" alt="animation of an eye opening and plants growing out and an ant crawling out">
+		<img id="flatbill" onclick="openModal();currentSlide(1)" src="assets/artwork/En Route.JPG" alt="painting of a rose flatbill bird flying with human arms under her/his/their wings">
+		<img id="owl" onclick="openModal();currentSlide(2)" src="assets/artwork/Losing My Grip.jpg" alt="painting of an owl sitting on a branch with human hands instead of talons">
+		<img id="raven" onclick="openModal();currentSlide(3)" src="assets/artwork/nothing more.jpg" alt="painting of a crow/raven with a human eye">
+		<img id="fear" onclick="openModal();currentSlide(4)" src="assets/artwork/fear.jpg" alt="paper cutout graphic of a hand partially covering an eye with the reflection of a monster hand in the eye">
+		<video id="love" onclick="openModal();currentSlide(5)" poster="assets/artwork/thumbnails/love_cover.png" controls><source src="assets/artwork/love.mp4" type="video/mp4" alt="animation of a girl getting her hair pushed behind her ear by someone out of frame, and then leaking pink goo from the eyes, nose, and mouth and falling over">Your browser does not support the video tag.</video>
+		<img id="braid" onclick="openModal();currentSlide(6)" src="assets/artwork/dahaht.jpg" alt="sketchy illustration of a girl braiding her hair">
+		<img id="flower" onclick="openModal();currentSlide(7)" src="assets/artwork/photosynthesmize.jpg" alt="illlustration of a flower with a human face">
+		<video id="scream" onclick="openModal();currentSlide(8)" controls src="assets/artwork/scream.mov" type="video/mov" poster="assets/artwork/thumbnails/scream_cover.png" alt="animation of a scream switch being pulling inside a mouth">Your browser does not support the video tag.</video>
+		<video id="abstract" onclick="openModal();currentSlide(9)" poster="assets/artwork/thumbnails/tcaoy_cover.png" controls><source src="assets/artwork/tcaoy.mp4" type="video/mp4" alt="animation of abstract light and colors">Your browser does not support the video tag.</video>
+		<img id="mouth" onclick="openModal();currentSlide(10)" src="assets/artwork/mouth.gif" alt="animation of a mouth opeing and a beetle crawling on the tongue">
+		<video id="privacy" onclick="openModal();currentSlide(11)" controls src="assets/artwork/ijwsp.mov" type="video/mov" alt="demo of an app where a spider creature gets scared if you make noise">Your browser does not support the video tag.</video>
+		<img id="self" onclick="openModal();currentSlide(12)" src="assets/artwork/selfportrait.PNG" alt="digital drawing of a girl and bugs">
+		<video id="moai" onclick="openModal();currentSlide(13)" poster="assets/artwork/thumbnails/moai_cover.png" controls src="assets/artwork/Among the Moai.mov" type="video/mov" alt="3d animation of a ufo bringing the statues of easter island to life">Your browser does not support the video tag.</video>
+		<video id="spider" onclick="openModal();currentSlide(14)" poster="assets/artwork/thumbnails/spider_cover.png" controls><source src="assets/artwork/spider.mp4" type="video/mp4" alt="3d animation of a spider with a human-like head dancing">Your browser does not support the video tag.</video>
+		<img id="earthling" onclick="openModal();currentSlide(15)" src="assets/artwork/earthling.gif" alt="animation of an eye opening and plants growing out and an ant crawling out">
 	</div>
+
+<!-- lightbox -->
+	<div id="myModal" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+
+    <div class="mySlides">
+      <div class="numbertext">1 / 15</div>
+      <img src="assets/artwork/En Route.JPG"" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">2 / 15</div>
+      <img src="assets/artwork/Losing My Grip.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">3 / 15</div>
+      <img src="assets/artwork/nothing more.jpg" style="width:100%">
+    </div>
+    <div class="mySlides">
+      <div class="numbertext">4 / 15</div>
+      <img src="assets/artwork/fear.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">5 / 15</div>
+      <video poster="assets/artwork/thumbnails/love_cover.png" controls style="width: 100%"><source src="assets/artwork/love.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">6 / 15</div>
+      <img src="assets/artwork/dahaht.jpg" style="width:100%">
+    </div>
+        <div class="mySlides">
+      <div class="numbertext">7 / 15</div>
+      <img src="assets/artwork/photosynthesmize.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">8 / 15</div>
+		<video controls src="assets/artwork/scream.mov" type="video/mov" poster="assets/artwork/thumbnails/scream_cover.png" style="width: 100%">Your browser does not support the video tag.</video>
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">9 / 15</div>
+      	<video poster="assets/artwork/thumbnails/tcaoy_cover.png" style="width: 100%" controls><source src="assets/artwork/tcaoy.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+    </div>
+        <div class="mySlides">
+      <div class="numbertext">10 / 15</div>
+      <img src="assets/artwork/mouth.gif" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">11 / 15</div>
+      <video controls src="assets/artwork/ijwsp.mov" type="video/mov" style="width: 100%">Your browser does not support the video tag.</video>
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">12 / 15</div>
+      <img src="assets/artwork/selfportrait.PNG" style="width:100%">
+    </div>
+        <div class="mySlides">
+      <div class="numbertext">13 / 15</div>
+      <video poster="assets/artwork/thumbnails/moai_cover.png" controls src="assets/artwork/Among the Moai.mov" type="video/mov" style="width: 100%">Your browser does not support the video tag.</video>
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">14 / 15</div>
+      <video poster="assets/artwork/thumbnails/spider_cover.png" style="width: 100%" controls><source src="assets/artwork/spider.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">15 / 15</div>
+      <img src="assets/artwork/earthling.gif" style="width:100%">
+    </div>
+    
+    
+    <a class="prev" onclick="plusSlides(-1); document.querySelectorAll('video').forEach(vid => vid.pause());">&#10094;</a>
+    <a class="next" onclick="plusSlides(1); document.querySelectorAll('video').forEach(vid => vid.pause());">&#10095;</a>
+
+    <div class="title-container">
+    	<p id="myTitle"></p>
+    </div>
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+
+    <div class="column">
+      <img class="demo cursor" src="assets/artwork/En Route.JPG" style="width:100%" onclick="currentSlide(1)" title="En Route" alt="acrylic on canvas">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="assets/artwork/Losing My Grip.jpg" style="width:100%" onclick="currentSlide(2)" title="Losing My Grip" alt="acrylic on canvas">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="assets/artwork/nothing more.jpg" style="width:100%" onclick="currentSlide(3)" title="Nothing More" alt="acrylic on canvas">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="assets/artwork/fear.jpg" style="width:100%" onclick="currentSlide(4)" title="Encounter" alt="paper and glue">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="assets/artwork/thumbnails/love_cover.png" style="width:100%" onclick="currentSlide(5)" title="Love" alt="animated in Photoshop">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="assets/artwork/dahaht.jpg" style="width:100%" onclick="currentSlide(6)" title="Does anyone have a hair tie?" alt="drawn in Photoshop">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="assets/artwork/photosynthesmize.jpg" style="width:100%" onclick="currentSlide(7)" title="Photosynthesmize" alt="drawn in Photoshop">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="assets/artwork/thumbnails/scream_cover.png" style="width:100%" onclick="currentSlide(8)" title="Scream" alt="animated in After Effects and Photoshop">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="assets/artwork/thumbnails/tcaoy_cover.png" style="width:100%" onclick="currentSlide(9)" title="They're Crawling All Over You" alt="animated in After Effects, music sampled from Marina and the Diamonds">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="assets/artwork/mouth.gif" style="width:100%" onclick="currentSlide(10)" title="Taste(buds)" alt="animated in Photoshop">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="assets/artwork/thumbnails/ijwsp_cover.png" style="width:100%" onclick="currentSlide(11)" title="I just want some privacy." alt="This piece is a sound-reactive application that was coded in Max, a visual programming language, and animated in After Effects and Photoshop. Both the interaction and the movement were designed to give an impossible creature just enough life to connect with people.">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="assets/artwork/selfportrait.PNG" style="width:100%" onclick="currentSlide(12)" title="Portrait" alt="made with Photoshop">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="assets/artwork/thumbnails/moai_cover.png" style="width:100%" onclick="currentSlide(13)" title="Among the Moai" alt="animated in Blender and After Effects">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="assets/artwork/thumbnails/spider_cover.png" style="width:100%" onclick="currentSlide(14)" title="Creeper" alt="made with Blender, Unity, After Effects, and Final Cut Pro">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="assets/artwork/earthling.gif" style="width:100%" onclick="currentSlide(15)" title="Earthling" alt="animated in Photoshop">
+    </div>
+
+  </div>
+</div>
+
+<!-- lightbox above -->
 
 	<button onclick="topFunction()" id="back2top" title="Go to top">&#x2191;</button>
 <!-- ^^^ page specific ^^^ -->
@@ -228,6 +496,47 @@ function scrollFunction() {
 function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
+}
+
+//lightbox below 
+
+function openModal() {
+  document.getElementById("myModal").style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById("myModal").style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var titleText = document.getElementById("myTitle");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  titleText.innerHTML = dots[slideIndex-1].title;
+  captionText.innerHTML = dots[slideIndex-1].alt;
 }
 
 </script>
