@@ -52,10 +52,10 @@ function preview_image(event)
 		font-weight: 700;
 	}
 	.prev{
-		left: 6vw;
+		left: 7vw;
 	}
 	.next{
-		right: 6vw;
+		right: 7vw;
 	}
 	.slide_button:hover{
 		color: #ffffff;
@@ -63,19 +63,19 @@ function preview_image(event)
 	}
 	#commission{
 		margin-top: 4vw;
-		margin-right: 5vw;
-		margin-left: 5vw;
+		margin-right: 7vw;
+		margin-left: 7vw;
 		font-family: 'Amatic SC', cursive;
-		font-size: 7vw;
+		font-size: 8vw;
 		font-weight: 700;
 		margin-bottom: 0;
 	}
 	#estimate{
-		margin-right: 5vw;
-		margin-left: 5vw;
+		margin-right: 7vw;
+		margin-left: 7vw;
 		text-decoration: none;
 		color: black;
-		font-size: 5.5vw;
+		font-size: 5vw;
 		margin-top: .5vw;
 	}
 	#estimate a{
@@ -87,7 +87,9 @@ function preview_image(event)
 	}
 	#email_box{
 		font-size: 5vw;
-		margin: 0px 5vw 5vw 5vw;
+		margin-left: 7vw;
+		margin-right: 7vw;
+		margin-bottom: 5vw;
 	}
 	#email_box input{
 		width: 100%;
@@ -121,7 +123,7 @@ function preview_image(event)
 		margin-right: 0;
 	}
 	#email_box .attach{
-		margin-right: 25px;
+		margin-right: 7vw;
 	}
 	#email_box button:hover{
 		background-color: #ff7800;
@@ -147,7 +149,7 @@ function preview_image(event)
 		border-radius: 0px;
 		width: 10%;
 	}
-	#header{
+	#estimate_header{
 		position: relative;
 		font-family: 'Amatic SC', cursive;
 		font-weight: 700;
@@ -155,19 +157,20 @@ function preview_image(event)
 		margin-left: 16vw;
 		margin-top: 0vw;
 		margin-bottom: 5vw;
+		color: #ff7800;
 	}
 	#calc_box{
-		font-size: 18pt;
-		margin: 0vw/*top*/ 5vw/*right*/ 0vw/*bottom*/ 5vw/*left*/;
+		font-size: 5vw;
+		margin: 0vw/*top*/ 7vw/*right*/ 0vw/*bottom*/ 7vw/*left*/;
 	}
 	#calc_box input{
 		font-family: 'Josefin Slab', serif;
 		width: 18vw;
-		font-size: 30pt;
+		font-size: 8vw;
 		text-align: center;
 		padding: 2vw/*top*/ 0vw/*left*/ 0vw/*bottom*/ 2vw/*right*/;
 		margin-top: 0px;
-		margin-bottom: 5vw;
+		margin-bottom: 0vw;
 	}
 	#calc_box button{
 		background-color: black;
@@ -176,8 +179,8 @@ function preview_image(event)
 		color: white;
 		font-family: 'Amatic SC', cursive;
 		font-size: 7vw;
-		float: left;
-		margin-top: 2vw;
+		float: right;
+		margin-top: 0vw;
 		padding-left: 2.2vw;
 		padding-right: 2vw;
 	}
@@ -185,8 +188,9 @@ function preview_image(event)
 		background-color: #ff7800;
 	}
 	#output_price{
-		margin-top: 10px;
-		font-size: 20pt;
+		margin-top: 5vw;
+		font-size: 5vw;
+		font-weight: 700;
 	}
 
 	#doodle{
@@ -239,7 +243,7 @@ function preview_image(event)
 	<button class="slide_button next" style="display: inline;" onclick="plusSlides(1)">></button>
 
 	<p id="commission">commission a custom painting</p>
-	<p id="estimate"><a href="#header">click for price estimate</a></p>
+	<p id="estimate"><a href="#estimate_header">click for price estimate</a></p>
 
 	<div id="email_box">
 		<form method="POST" action="https://formsubmit.co/annie.t.courtney@gmail.com" enctype="multipart/form-data">
@@ -271,7 +275,7 @@ function preview_image(event)
 <!-- estimate stuff below -->
   	<div class="estimate_bar "></div>
   	<div class="estimate_bar corner"></div>
-	<p id="header">Custom Painting Pricing</p>
+	<p id="estimate_header">Custom Painting Pricing</p>
 	<img id="doodle" src="assets/hanging_pictures.png">
 	<div id="calc_box">
 		<input type="number" id="length" value="0">
@@ -279,13 +283,14 @@ function preview_image(event)
 		<input type="number" id="width" value="0">
 		inches
 		<br>
+		<p id="output_price"></p>
 		<button type="button"
 		onclick="document.getElementById('output_price').innerHTML = output()">
 		estimate&nbsp;&nbsp;price</button>
+<!-- 		<br>
 		<br>
 		<br>
-		<br>
-		<p id="output_price"></p>
+		<p id="output_price"></p> -->
 	</div>
 <!-- ^^^ page specific ^^^ -->
 </div>
