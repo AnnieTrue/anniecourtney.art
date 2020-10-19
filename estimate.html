@@ -15,11 +15,11 @@
 		font-size: 9vw;
 		margin-left: 5vw;
 		margin-top: 0vw;
-		margin-bottom: 0vw;
+		margin-bottom: 5vw;
 	}
 	#calc_box{
 		font-size: 18pt;
-		margin: 5vw/*top*/ 20px/*right*/ 20px/*bottom*/ 5vw/*left*/;
+		margin: 0vw/*top*/ 5vw/*right*/ 5vw/*bottom*/ 5vw/*left*/;
 	}
 	#calc_box input{
 		font-family: 'Josefin Slab', serif;
@@ -28,7 +28,7 @@
 		text-align: center;
 		padding: 2vw/*top*/ 0vw/*left*/ 0vw/*bottom*/ 2vw/*right*/;
 		margin-top: 0px;
-		margin-bottom: 20px;
+		margin-bottom: 5vw;
 	}
 	#calc_box button{
 		background-color: black;
@@ -71,12 +71,13 @@
   			<img id="dot1"src="assets/dot.svg">
   			<a id="shop" href="shop.html" target="_self">shop</a>
   			<img id="dot2" src="assets/dot.svg">
-  			<a id="contact" class="page_title" href="contact.html">contact me</a>
+  			<a id="contact" href="contact.html">contact me</a>
 		</div>
 	</div>
 <div id="inner_box">
 <!--page specific-->
 
+	<img id="doodle" src="assets/hanging_pictures.png">
 	<p id="header">Custom Painting Pricing:</p>
 	<div id="calc_box">
 		<input type="number" id="length" value="0">
@@ -92,9 +93,6 @@
 		<br>
 		<p id="output_price"></p>
 	</div>
-
-	<img id="doodle" src="assets/hanging_pictures.png">
-
 <!-- ^^^ page specific ^^^ -->
 </div>
 	<div id="footer">All work &#169; Annie Courtney unless otherwise  noted.</div>
@@ -139,7 +137,7 @@
 		return Math.ceil(canvas + paint + hours);
 	}
 	function output(){
-		return '$'+lowEstimate(document.getElementById('length').value, document.getElementById('width').value)+' - $'+highEstimate(document.getElementById('length').value, document.getElementById('width').value)+' (depending on the the level of detail)';
+		return '$'+lowEstimate(document.getElementById('length').value, document.getElementById('width').value)+' - $'+highEstimate(document.getElementById('length').value, document.getElementById('width').value)+' (depending on the level of detail)';
 	}
 </script>
 
