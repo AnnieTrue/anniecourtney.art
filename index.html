@@ -9,7 +9,6 @@
 </head>
 <style>
 	#artworks{
-		/*background-color: pink;*/
 		display: grid;
 		grid-gap: 3vw;
 	}
@@ -27,7 +26,7 @@
 		margin-bottom: 0%;
 	}
 
-	#back2top {
+	#back2top{
 	  display: none;
 	  position: fixed;
 	  bottom: 2vw;
@@ -44,49 +43,12 @@
 	  border-radius: 2vw;
 	  /*font-weight: 700;*/
 	}
-
 	#back2top:hover {
 	  color: #ff7800;
 	  background-color: black;
 	}
 
-/*lightbox below*/
-
-	/* the little icons of all the images in the lightbox*/
-	.column { 
-	  float: left;
-	  width: 10%;
-	  margin-left: 2vw;
-	}
-
-	.title-container {
-	  text-align: center;
-	  margin-top: -8.5vw;
-	  color: white;
-	  font-size: 8vw;
-	  font-family: 'Amatic SC', cursive;
-	  font-weight: 700;
-	}
-
-	.caption-container{
-		text-align: center;
-	  margin-top: 0vw;
-	  margin-left: 7vw;
-	  margin-right: 7vw;
-	  color: white;
-	  font-size: 5vw;
-	  font-family: 'Josefin Slab', serif;
-	}
-
-	/*unselected little icons*/
-	.demo {
-	  opacity: .5;
-	}
-	/*selected little icon*/
-	.active,
-	.demo:hover {
-	  opacity: 1;
-	}
+/*mobile lightbox below*/
 
 	/* The Modal (background) */
 	.modal {
@@ -144,6 +106,14 @@
 	  display: none;
 	}
 
+	.mySlides img{
+		width: 100%;
+	}
+
+	.mySlides video{
+		width: 100%;
+	}
+
 	.cursor {
 	  cursor: pointer;
 	}
@@ -158,12 +128,7 @@
 	  color: white;
 	  font-family: 'Josefin Slab', serif;
 	  font-weight: 400;
-	  /*font-weight: bold;*/
 	  font-size: 8vw;
-/*	  transition: 0.6s ease;*/
-/*	  border-radius: 0 3px 3px 0*/;
-/*	  user-select: none;
-	  -webkit-user-select: none;*/
 	}
 	.prev{
 		left: 5vw;
@@ -182,20 +147,68 @@
 	  color: #ff7800;
 	}
 
+		.title-container {
+	  text-align: center;
+	  margin-top: 0vw;
+	  color: white;
+	  font-size: 8vw;
+	  font-family: 'Amatic SC', cursive;
+	  font-weight: 700;
+	}
+
+	.caption-container{
+	  text-align: center;
+	  margin-top: 0vw;
+	  margin-left: 7vw;
+	  margin-right: 7vw;
+	  color: white;
+	  font-size: 5vw;
+	  font-family: 'Josefin Slab', serif;
+	}
+	
+	/* the little icons of all the images in the lightbox*/
+	.column { 
+	  display: flex;
+	  flex-wrap: wrap;
+	  align-items: flex-start;
+	  flex-direction: row;
+	  width: 100vw;
+	  margin-left: 7.5vw;
+	  margin-bottom: 2vw;
+	}
+	.column img{
+	  margin: 1vw;
+	  width: 15vw;
+	}
+	/*unselected little icons*/
+	.demo {
+	  opacity: .25;
+	}
+	/*selected little icon*/
+	.active,
+	.demo:hover {
+	  opacity: 1;
+	}
+
+/*desktop below*/
+
 	@media (min-width: 992px), (orientation: landscape) {
 		#back2top {
 		  bottom: 2vw;
 		  right: 2vw;
 		  color: #ff780075;
-		  background-color: transparent;
-		  font-size: 7vw;
+		  background-color: #00000050;
+		  font-size: 5vw;
+		  border-radius: .75vw;
+		  padding-bottom: 1vw;
+		  right: 3vw;
 		}
 		#artworks{
 			margin-right: 1vw;
 			margin-left: 1vw;
 			display: grid;
 		    grid-template-columns: repeat(15, 1fr);
-		    grid-template-rows: repeat(24, 10vw);
+		    grid-template-rows: repeat(22, 10vw);
 		    grid-gap: 1vw;
 		}
 		#artworks img{
@@ -299,7 +312,139 @@
 		    grid-row-start: 21;
 		    grid-row-end: 23;
 		}
-	}
+
+/*desktop lightbox below*/
+
+		/* The Modal (background) */
+		.modal {
+		  display: none;
+		  position: fixed;
+		  z-index: 1;
+		  padding-top: 0vw;
+		  left: 0;
+		  top: 0;
+		  width: 100%;
+		  height: 100%;
+		  overflow: auto;
+		}
+
+		/* Modal Content */
+		.modal-content {
+		  position: relative;
+		  margin-top: 1vw;
+		  padding: 0;
+		  margin-left: 1vw;
+		  margin-right: 1vw;
+		}
+
+		.mySlides{
+		  margin-top: 4vw;
+		  margin-left: 4vw;
+		  margin-right: 5vw;
+		  display: none;
+		  width: 50%;
+		  margin-bottom: 5vw;
+		}
+
+		.mySlides img{
+		  display: block;
+		  width: 50vw;
+		  height: auto;
+		  max-height: 50vw;
+		  margin-left: auto;
+		  margin-right: auto;
+		}
+		#LMG{
+		  width: 35vw;
+		  height: auto;
+		  margin-left: auto;
+		  margin-right: auto;
+		}
+
+		.mySlides video{
+		  display: block;
+		  height: auto;
+		  width: 50vw;
+		  margin-left: auto;
+		  margin-right: auto;
+		}
+
+		/* The Close Button */
+		.close {
+		  z-index: 99;
+		  color: white;
+		  position: absolute;
+		  top: -1vw;
+		  right: 1vw;
+		  font-size: 5vw;
+		}
+
+		/* Number text (1/15 etc) */
+		.numbertext {
+		  font-size: 2vw;
+		  margin-top: -2.75vw;
+		  margin-left: -3.5vw;
+		  position: absolute;
+		}
+
+		/* Next & previous buttons */
+		.prev,
+		.next {
+		  position: absolute;
+		  width: auto;
+		  font-size: 4vw;
+		}
+		.prev{
+			left: 0;
+			padding-left: 4vw;
+		}
+
+		/* Position the "next button" to the right */
+		.next {
+		  right: 0;
+		  padding-right: 5vw;
+		}
+
+		/* the little icons of all the images in the lightbox*/
+		.column { 
+		  display: flex;
+		  flex-wrap: wrap;
+		  align-items: flex-start;
+		  flex-direction: row;
+		  width: 100vw;
+		  margin-left: 1vw;
+		  margin-bottom: 2vw;
+		}
+		.column img{
+		  margin: 1vw;
+		  width: 10vw;
+		}
+
+		.title-container {
+		  position: absolute;
+		  text-align: center;
+		  width: 50vw;
+		  top: 1vw;
+		  left: 48vw;
+		  font-size: 4vw;
+		  margin-left: 4vw;
+		  margin-right: 4vw;
+		}
+
+		.caption-container{
+		  position: absolute;
+		  text-align: center;
+		  width: 50vw;
+		  top: 5vw;
+		  left: 48vw;
+		  margin-left: 4vw;
+		  margin-right: 4vw;
+		  padding-left: 4vw;
+		  padding-right: 4vw;
+		  font-size: 2vw;
+		}
+
+}
 
 </style>
 <body>
@@ -344,87 +489,103 @@
 
     <div class="mySlides">
       <div class="numbertext">1 / 15</div>
-      <img src="assets/artwork/En Route.JPG"" style="width:100%">
+      <img src="assets/artwork/En Route.JPG"">
     </div>
 
     <div class="mySlides">
       <div class="numbertext">2 / 15</div>
-      <img src="assets/artwork/Losing My Grip.jpg" style="width:100%">
+      <img id="LMG" src="assets/artwork/Losing My Grip.jpg">
     </div>
 
     <div class="mySlides">
       <div class="numbertext">3 / 15</div>
-      <img src="assets/artwork/nothing more.jpg" style="width:100%">
+      <img src="assets/artwork/nothing more.jpg">
     </div>
     <div class="mySlides">
       <div class="numbertext">4 / 15</div>
-      <img src="assets/artwork/fear.jpg" style="width:100%">
+      <img src="assets/artwork/fear.jpg">
     </div>
 
     <div class="mySlides">
       <div class="numbertext">5 / 15</div>
-      <video poster="assets/artwork/thumbnails/love_cover.png" controls style="width: 100%"><source src="assets/artwork/love.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+      <video poster="assets/artwork/thumbnails/love_cover.png" controls><source src="assets/artwork/love.mp4" type="video/mp4">Your browser does not support the video tag.</video>
     </div>
 
     <div class="mySlides">
       <div class="numbertext">6 / 15</div>
-      <img src="assets/artwork/dahaht.jpg" style="width:100%">
+      <img src="assets/artwork/dahaht.jpg">
     </div>
         <div class="mySlides">
       <div class="numbertext">7 / 15</div>
-      <img src="assets/artwork/photosynthesmize.jpg" style="width:100%">
+      <img src="assets/artwork/photosynthesmize.jpg">
     </div>
 
     <div class="mySlides">
       <div class="numbertext">8 / 15</div>
-		<video controls src="assets/artwork/scream.mov" type="video/mov" poster="assets/artwork/thumbnails/scream_cover.png" style="width: 100%">Your browser does not support the video tag.</video>
+		<video controls src="assets/artwork/scream.mov" type="video/mov" poster="assets/artwork/thumbnails/scream_cover.png">Your browser does not support the video tag.</video>
     </div>
 
     <div class="mySlides">
       <div class="numbertext">9 / 15</div>
-      	<video poster="assets/artwork/thumbnails/tcaoy_cover.png" style="width: 100%" controls><source src="assets/artwork/tcaoy.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+      	<video poster="assets/artwork/thumbnails/tcaoy_cover.png" controls><source src="assets/artwork/tcaoy.mp4" type="video/mp4">Your browser does not support the video tag.</video>
     </div>
         <div class="mySlides">
       <div class="numbertext">10 / 15</div>
-      <img src="assets/artwork/mouth.gif" style="width:100%">
+      <img src="assets/artwork/mouth.gif">
     </div>
 
     <div class="mySlides">
       <div class="numbertext">11 / 15</div>
-      <video controls src="assets/artwork/ijwsp.mov" type="video/mov" style="width: 100%">Your browser does not support the video tag.</video>
+      <video controls src="assets/artwork/ijwsp.mov" type="video/mov">Your browser does not support the video tag.</video>
     </div>
 
     <div class="mySlides">
       <div class="numbertext">12 / 15</div>
-      <img src="assets/artwork/selfportrait.PNG" style="width:100%">
+      <img src="assets/artwork/selfportrait.PNG">
     </div>
         <div class="mySlides">
       <div class="numbertext">13 / 15</div>
-      <video poster="assets/artwork/thumbnails/moai_cover.png" controls src="assets/artwork/Among the Moai.mov" type="video/mov" style="width: 100%">Your browser does not support the video tag.</video>
+      <video poster="assets/artwork/thumbnails/moai_cover.png" controls src="assets/artwork/Among the Moai.mov" type="video/mov">Your browser does not support the video tag.</video>
     </div>
 
     <div class="mySlides">
       <div class="numbertext">14 / 15</div>
-      <video poster="assets/artwork/thumbnails/spider_cover.png" style="width: 100%" controls><source src="assets/artwork/spider.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+      <video poster="assets/artwork/thumbnails/spider_cover.png" controls><source src="assets/artwork/spider.mp4" type="video/mp4">Your browser does not support the video tag.</video>
     </div>
 
     <div class="mySlides">
       <div class="numbertext">15 / 15</div>
-      <img src="assets/artwork/earthling.gif" style="width:100%">
+      <img src="assets/artwork/earthling.gif">
     </div>
     
-    
-    <a class="prev" onclick="plusSlides(-1); document.querySelectorAll('video').forEach(vid => vid.pause());">&#10094;</a>
-    <a class="next" onclick="plusSlides(1); document.querySelectorAll('video').forEach(vid => vid.pause());">&#10095;</a>
-
     <div class="title-container">
-    	<p id="myTitle"></p>
+	    <a class="prev" onclick="plusSlides(-1); document.querySelectorAll('video').forEach(vid => vid.pause());">&#10094;</a>
+	    <a id="myTitle"></a>
+	    <a class="next" onclick="plusSlides(1); document.querySelectorAll('video').forEach(vid => vid.pause());">&#10095;</a>
     </div>
     <div class="caption-container">
       <p id="caption"></p>
     </div>
 
-    <div class="column">
+        <div class="column">
+	      <img class="demo cursor" src="assets/artwork/En Route.JPG" onclick="currentSlide(1)" title="En Route" alt="acrylic on canvas">
+	      <img class="demo cursor" src="assets/artwork/Losing My Grip.jpg" onclick="currentSlide(2)" title="Losing My Grip" alt="acrylic on canvas">
+	      <img class="demo cursor" src="assets/artwork/nothing more.jpg" onclick="currentSlide(3)" title="Nothing More" alt="acrylic on canvas">
+	      <img class="demo cursor" src="assets/artwork/fear.jpg" onclick="currentSlide(4)" title="Encounter" alt="paper and glue">
+	      <img class="demo cursor" src="assets/artwork/thumbnails/love_cover.png" onclick="currentSlide(5)" title="Love" alt="animated in Photoshop">
+	      <img class="demo cursor" src="assets/artwork/dahaht.jpg" onclick="currentSlide(6)" title="Does anyone have a hair tie?" alt="drawn in Photoshop">
+	      <img class="demo cursor" src="assets/artwork/photosynthesmize.jpg" onclick="currentSlide(7)" title="Photosynthesmize" alt="drawn in Photoshop">
+	      <img class="demo cursor" src="assets/artwork/thumbnails/scream_cover.png" onclick="currentSlide(8)" title="Scream" alt="animated in After Effects and Photoshop">
+	      <img class="demo cursor" src="assets/artwork/thumbnails/tcaoy_cover.png" onclick="currentSlide(9)" title="They're Crawling All Over You" alt="animated in After Effects, music sampled from Marina and the Diamonds">
+	      <img class="demo cursor" src="assets/artwork/mouth.gif" onclick="currentSlide(10)" title="Taste(buds)" alt="animated in Photoshop">
+	      <img class="demo cursor" src="assets/artwork/thumbnails/ijwsp_cover.png" onclick="currentSlide(11)" title="I just want some privacy." alt="This piece is a sound-reactive application that was coded in Max, a visual programming language, and animated in After Effects and Photoshop. Both the interaction and the movement were designed to give an impossible creature just enough life to connect with people.">
+	      <img class="demo cursor" src="assets/artwork/selfportrait.PNG" onclick="currentSlide(12)" title="Portrait" alt="made with Photoshop">
+	      <img class="demo cursor" src="assets/artwork/thumbnails/moai_cover.png" onclick="currentSlide(13)" title="Among the Moai" alt="animated in Blender and After Effects">
+	      <img class="demo cursor" src="assets/artwork/thumbnails/spider_cover.png" onclick="currentSlide(14)" title="Creeper" alt="made with Blender, Unity, After Effects, and Final Cut Pro">
+	      <img class="demo cursor" src="assets/artwork/earthling.gif" onclick="currentSlide(15)" title="Earthling" alt="animated in Photoshop">
+    </div>
+
+<!--     <div class="column">
       <img class="demo cursor" src="assets/artwork/En Route.JPG" style="width:100%" onclick="currentSlide(1)" title="En Route" alt="acrylic on canvas">
     </div>
     <div class="column">
@@ -468,7 +629,7 @@
     </div>
     <div class="column">
       <img class="demo cursor" src="assets/artwork/earthling.gif" style="width:100%" onclick="currentSlide(15)" title="Earthling" alt="animated in Photoshop">
-    </div>
+    </div> -->
 
   </div>
 </div>
