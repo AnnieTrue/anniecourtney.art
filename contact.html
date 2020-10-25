@@ -85,6 +85,10 @@
 		cursor: pointer;
 	}
 
+	input[name="_honey"] {
+  		display: none;
+	}
+
 /*desktop below*/
 
 	@media (min-width: 992px), (orientation: landscape) {
@@ -202,8 +206,10 @@
 	<div id="email_box">
 		<form action="https://formsubmit.co/annie.t.courtney@gmail.com" 
 method="POST">
-			<input type="hidden" name="_next" value="#contact_thanks.html">
-			<input type="text" name="_honey" style="display:none">
+			<input type="hidden" name="_next" value="https://annietrue.github.io/anniecourtney.art/contact.html">
+			<input type="text" name="_honey">
+			<input type="hidden" name="_autoresponse" value="Thanks so much for reaching out! I will get back to you as soon as possible. - Annie">
+			<input type="hidden" name="_template" value="box">
 			<!-- hidden formsubmit.co settings ^^^  -->
 			<label for="name">name*</label>
 			<br>
@@ -211,7 +217,7 @@ method="POST">
 			<br>
 			<label for="email_address">email address*</label>
 			<br>
-			<input type="text" id="email_address" name="email_address" value="" required>
+			<input type="email" id="email_address" name="email" value="" required>
 			<br>
 			<label for="subject">subject*</label>
 			<br>

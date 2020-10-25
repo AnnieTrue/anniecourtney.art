@@ -135,6 +135,10 @@ function preview_image(event)
 	 	margin: 7vw/*top*/ 0/*right*/ 7vw/*bottom*/ 0/*left*/;
 	}
 
+	input[name="_honey"] {
+  		display: none;
+	}
+
 /*estimate stuff below*/
 	.estimate_bar {
 		position: absolute;
@@ -389,13 +393,18 @@ function preview_image(event)
 
 	<div id="email_box">
 		<form method="POST" action="https://formsubmit.co/annie.t.courtney@gmail.com" enctype="multipart/form-data">
+			<input type="hidden" name="_next" value="https://annietrue.github.io/anniecourtney.art/shop.html">
+			<input type="text" name="_honey">
+			<input type="hidden" name="_autoresponse" value="Thank you so much for your interest in my work! I will get back to you about your custom painting request as soon as possible. - Annie">
+			<input type="hidden" name="_template" value="box">
+			<!-- hidden formsubmit.co settings ^^^  -->
 			<label for="name">name*</label>
 			<br>
 			<input type="text" id="name" name="name" value="" required>
 			<br>
 			<label for="email">email address*</label>
 			<br>
-			<input type="text" id="email" name="email" value="" required>
+			<input type="email" id="email" name="email" value="" required>
 			<br>
 			<label for="dimensions">painting dimensions*</label>
 			<br>
