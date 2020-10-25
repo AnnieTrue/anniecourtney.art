@@ -8,6 +8,38 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <style>
+	.alert {
+	  padding-left: 5vw;
+	  padding-right: 5vw;
+	  padding-bottom: 5vw;
+	  padding-top: 1vw;
+	  background-color: #000000;
+	  color: white;
+	  font-family: 'Josefin Slab', serif;
+	  font-weight: 700;
+	  font-size: 5vw;
+	  margin-top: 1vw;
+	  margin-bottom: 10vw;
+	  width: 100%;
+	}
+	.closebtn {
+	  margin-left: 7vw;
+	  color: white;
+	  font-weight: bold;
+	  float: right;
+	  font-size: 15vw;
+	  font-weight: 400;
+	  line-height: 0vw;
+	  margin-right: -2vw;
+	  cursor: pointer;
+	  margin-bottom: 1vw;
+	  margin-top: 5vw;
+	  font-family:'Josefin Slab', sans-serif;
+	}
+	.closebtn:hover {
+	  color: #ff7800;
+	}
+/*submit confirmation above*/
 	#handles{
 		font-size: 4.5vw;
 		position: absolute;
@@ -94,6 +126,34 @@
 			'alert' 
 			'doodle email_box';
 		}
+
+	.alert {
+	  padding-left: 2vw;
+	  padding-right: 2vw;
+	  padding-bottom: 3vw;
+	  padding-top: 1vw;
+	  background-color: #000000;
+	  color: white;
+	  font-family: 'Josefin Slab', serif;
+	  font-weight: 700;
+	  font-size: 2vw;
+	  margin-top: -1vw;
+	  margin-bottom: 6vw;
+	  width: 100%;
+	  text-align: center;
+	}
+	.closebtn {
+	  margin-left: 0vw;
+	  color: white;
+	  float: right;
+	  font-size: 5vw;
+	  font-weight: 400;
+	  margin-right: 0vw;
+	  margin-top: 1vw;
+	  cursor: pointer;
+	  font-family:'Josefin Slab', sans-serif;
+	}
+
 
 
 		#handles img{
@@ -195,6 +255,12 @@
 	</div>
 <div id="inner_box">
 <!--page specific-->
+
+<div class="alert">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+  <br>
+  Thank you! Your message has been submitted and I will get back to you as soon as possible. - Annie
+</div>
 
 
 	<div id="handles">
