@@ -124,7 +124,7 @@ function preview_image(event)
 		font-size: 5vw;
 		margin-left: 7vw;
 		margin-right: 7vw;
-		margin-bottom: 5vw;
+		margin-bottom: 15vw;
 	}
 	#email_box input{
 		width: 100%;
@@ -165,9 +165,8 @@ function preview_image(event)
 		cursor: pointer;
 	}
 	#output_image{
-	 	max-width: 50vw;
-
-	 	margin: 7vw/*top*/ 0/*right*/ 7vw/*bottom*/ 0/*left*/;
+	 	max-height: 9vw;
+	 	margin: 2vw/*top*/ 0/*right*/ 0vw/*bottom*/ 2vw/*left*/;
 	}
 
 	input[name="_honey"] {
@@ -176,7 +175,6 @@ function preview_image(event)
 
 /*estimate stuff below*/
 	.estimate_bar {
-		position: absolute;
 		background-color: #ffddc7;
 		height: 9vw;
 		width: 88vw;
@@ -268,6 +266,7 @@ function preview_image(event)
 		}
 
 		.alert {
+		  display: none;
 		  padding-left: 2vw;
 		  padding-right: 2vw;
 		  padding-bottom: 3vw;
