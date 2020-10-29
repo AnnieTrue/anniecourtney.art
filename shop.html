@@ -230,15 +230,15 @@ function preview_image(event)
 		cursor: pointer;
 	}
 	#output_price{
-		margin-top: 0vw;
-		font-size: 5vw;
+		margin-top: 1.9vw;
+		font-size: 7vw;
 		font-weight: 700;
 		margin-right: 0vw;
 	}
 	#output_info{
 		position: absolute;
-		margin-top: -9.5vw;
-		font-size: 3vw;
+		margin-top: -8vw;
+		font-size: 5vw;
 		font-weight: 700;
 		margin-right: 0vw;
 	}
@@ -439,15 +439,16 @@ function preview_image(event)
 		#output_price{
 			position: absolute;
 			font-size: 3vw;
-			margin-top: 5.5vw;
+			margin-top: 6vw;
 			margin-left: .25vw;
 			float: left;
 		}
 		#output_info{
 			position: absolute;
-			margin-top: 7vw;
-			font-size: 1.5vw;
+			margin-top: 8vw;
+			font-size: 2vw;
 			margin-left: -14.5vw;
+			margin-right: 4vw;
 		}
 	}
 
@@ -560,9 +561,9 @@ function preview_image(event)
 		<button type="button"
 		onclick="document.getElementById('output_price').innerHTML = output(); document.getElementById('output_info').innerHTML = output_info();">
 		estimate&nbsp;&nbsp;price</button>
-		<p id="output_price"></p>
-		<br>
-		<a id="output_info"></a>
+			<p id="output_price"></p>
+			<br>
+			<a id="output_info"></a>
 	</div>
 </div>
 <!-- ^^^ page specific ^^^ -->
