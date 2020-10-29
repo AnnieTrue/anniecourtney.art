@@ -23,7 +23,7 @@ function preview_image(event)
 
 </head>
 <style>
-		.alert {
+	.alert {
 	  padding-left: 5vw;
 	  padding-right: 5vw;
 	  padding-bottom: 5vw;
@@ -196,7 +196,7 @@ function preview_image(event)
 		margin-left: 29vw;
 		margin-top: 0vw;
 		margin-bottom: 5vw;
-		color: #ff7800;
+		color: black;
 	}
 	#calc_box{
 		font-size: 5vw;
@@ -231,6 +231,13 @@ function preview_image(event)
 	#output_price{
 		margin-top: 0vw;
 		font-size: 5vw;
+		font-weight: 700;
+		margin-right: 0vw;
+	}
+	#output_info{
+		position: absolute;
+		margin-top: -9.5vw;
+		font-size: 3.5vw;
 		font-weight: 700;
 		margin-right: 0vw;
 	}
@@ -366,23 +373,23 @@ function preview_image(event)
 
 /*desktop estimate stuff below*/
 		.estimate_bar {
-			height: 5vw;
-			width: 60vw;
-			border-radius: 1vw;
-			left: 0;
-			margin-top: .6vw;
+			height: 4.2vw;
+			width: 97vw;
+			border-radius: .35vw;
+			margin-top: 1vw;
+			margin-left: 1.5vw;
 		}
 		.corner{ 
+			display: none;
 			border-radius: 0;
 			width: 2vw;
 		}
 		#estimate_header{
 			position: relative;
 			font-size: 4vw;
-			margin-left: 30.5vw;
+			margin-left: 2.5vw;
 			margin-top: .5vw;
-/*			margin-top: 0vw;
-			margin-bottom: 5vw;*/
+			float: left;
 		}
 		#doodle{
 			display: none;
@@ -391,25 +398,29 @@ function preview_image(event)
 			width: 92%;
 			margin-right: 4vw;
 			margin-left: 4vw;
+			margin-top: -3vw;
+			position: relative;
 		}
 		#doodle_left{
 			display: inline-block;
-			width: 25vw;
+			width: 30vw;
 			height: auto;
+			margin-left: 10vw;
 		}
 		#doodle_right{
-			display: block;
-			width: 25vw;
+			display: inline-block;
+			width: 30vw;
 			height: auto;
 			float: right;
-			margin-top: 17vw;
+			margin-top: 18.75vw;
+			margin-right: 7vw;
 		}
 		#calc_box{
 			width: 33vw;
 			height: 30vw;
-			position: relative;
+			position: absolute;
 			font-size: 2vw;
-			margin: -68vw/*top*/ 0/*right*/ 0vw/*bottom*/ 36vw/*left*/;
+			margin: -30vw/*top*/ 0/*right*/ 0vw/*bottom*/ 26vw/*left*/;
 			z-index: 99;
 		}
 		#calc_box input{
@@ -424,10 +435,17 @@ function preview_image(event)
 			float: left;
 		}
 		#output_price{
-			font-size: 2vw;
-			margin-top: 2vw;
-			margin-right: 0vw;
+			position: absolute;
+			font-size: 3vw;
+			margin-top: 5.5vw;
+			margin-left: .25vw;
 			float: left;
+		}
+		#output_info{
+			position: absolute;
+			margin-top: 7vw;
+			font-size: 2vw;
+			margin-left: -14.5vw;
 		}
 	}
 
@@ -530,7 +548,6 @@ function preview_image(event)
 	<img id="doodle" src="assets/hanging_pictures.png">
 	<img id="doodle_left" src="assets/hanging_left.png">
 	<img id="doodle_right" src="assets/hanging_right.png">
-</div>
 	<div id="calc_box">
 		<input type="number" id="length" value="0">
 		inches by 
@@ -539,14 +556,13 @@ function preview_image(event)
 		<br>
 		<br>
 		<button type="button"
-		onclick="document.getElementById('output_price').innerHTML = output()">
+		onclick="document.getElementById('output_price').innerHTML = output(); document.getElementById('output_info').innerHTML = output_info();">
 		estimate&nbsp;&nbsp;price</button>
 		<p id="output_price"></p>
-<!-- 		<br>
 		<br>
-		<br>
-		<p id="output_price"></p> -->
+		<a id="output_info"></a>
 	</div>
+</div>
 <!-- ^^^ page specific ^^^ -->
 </div>
 	<div id="footer">All work &#169; Annie Courtney unless otherwise  noted.</div>
@@ -620,7 +636,10 @@ function preview_image(event)
 		return Math.ceil(canvas + paint + hours);
 	}
 	function output(){
-		return '$'+lowEstimate(document.getElementById('length').value, document.getElementById('width').value)+' - $'+highEstimate(document.getElementById('length').value, document.getElementById('width').value)+' (depending on the level of detail)';
+		return '$'+lowEstimate(document.getElementById('length').value, document.getElementById('width').value)+' - $'+highEstimate(document.getElementById('length').value, document.getElementById('width').value);
+	}
+	function output_info(){
+		return '(depending on the level of detail)';
 	}
 </script>
 </body>
