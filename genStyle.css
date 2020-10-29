@@ -92,6 +92,8 @@ body{
 	padding-bottom: 3.5vw;
 }
 
+/*dektop stuff below*/
+
 @media (min-width: 992px), (orientation: landscape) {
 	#box{
 		display: grid;

@@ -23,7 +23,7 @@ function preview_image(event)
 
 </head>
 <style>
-	.alert {
+		.alert {
 	  padding-left: 5vw;
 	  padding-right: 5vw;
 	  padding-bottom: 5vw;
@@ -201,6 +201,7 @@ function preview_image(event)
 	#calc_box{
 		font-size: 5vw;
 		margin: 0vw/*top*/ 7vw/*right*/ 0vw/*bottom*/ 7vw/*left*/;
+		position: relative;
 	}
 	#calc_box input{
 		font-family: 'Josefin Slab', serif;
@@ -237,6 +238,13 @@ function preview_image(event)
 	#doodle{
 		width: 100%;
 		height: auto;
+		position: relative;
+	}
+	#doodle_left{
+		display: none;
+	}
+	#doodle_right{
+		display: none;
 	}
 
 /*desktop below*/
@@ -278,7 +286,6 @@ function preview_image(event)
 		  cursor: pointer;
 		  font-family:'Josefin Slab', sans-serif;
 		}
-
 
 
 		#slideshow{
@@ -354,7 +361,7 @@ function preview_image(event)
 		}
 		#output_image{
 		 	max-height: 4vw;
-		 	margin: -1vw/*top*/ 0/*right*/ 0/*bottom*/ 1vw/*left*/;
+		 	margin: -1vw/*top*/ 0vw/*right*/ 0/*bottom*/ 1vw/*left*/;
 		}
 
 /*desktop estimate stuff below*/
@@ -378,18 +385,32 @@ function preview_image(event)
 			margin-bottom: 5vw;*/
 		}
 		#doodle{
-			position: relative;
-			margin-top: -2vw;
-			margin-left: 45vw;
-			width: 55vw;
+			display: none;
+		}
+		#doodles{
+			width: 92%;
+			margin-right: 4vw;
+			margin-left: 4vw;
+		}
+		#doodle_left{
+			display: inline-block;
+			width: 25vw;
 			height: auto;
-			float: left;
+		}
+		#doodle_right{
+			display: block;
+			width: 25vw;
+			height: auto;
+			float: right;
+			margin-top: 17vw;
 		}
 		#calc_box{
-			width: 45vw;
+			width: 33vw;
+			height: 30vw;
 			position: relative;
 			font-size: 2vw;
-			margin: -37vw/*top*/ 0/*right*/ 0vw/*bottom*/ 4vw/*left*/;
+			margin: -68vw/*top*/ 0/*right*/ 0vw/*bottom*/ 36vw/*left*/;
+			z-index: 99;
 		}
 		#calc_box input{
 			width: 9vw;
@@ -505,7 +526,11 @@ function preview_image(event)
   	<div class="estimate_bar corner"></div>
 	<p id="estimate_header">Custom Painting Pricing</p>
 </div>
+<div id="doodles">
 	<img id="doodle" src="assets/hanging_pictures.png">
+	<img id="doodle_left" src="assets/hanging_left.png">
+	<img id="doodle_right" src="assets/hanging_right.png">
+</div>
 	<div id="calc_box">
 		<input type="number" id="length" value="0">
 		inches by 
