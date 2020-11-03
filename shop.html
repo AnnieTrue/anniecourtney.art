@@ -539,7 +539,7 @@ function preview_image(event)
 				<button type="submit">submit</button>
 
 				<button type="button" class="attach" id="attach" onclick="document.getElementById('upload').click();" />attach&nbsp;&nbsp;image</button>
-				<input type="file" style="display:none;" id="upload" name="upload" accept="*" onchange="preview_image(event)"/>
+				<input type="file" style="display:none;" id="upload" name="upload" accept="image/*" onchange="preview_image(event)"/>
 			</p>
 			<img id="output_image"/>
 		</form>
