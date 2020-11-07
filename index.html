@@ -13,7 +13,7 @@
 	#artworks{
 		display: grid;
 		grid-gap: 3vw;
-		background-color: gray;
+		background-color: yellow;
 	}
 	#artworks img{
 		width: 100%;
@@ -119,7 +119,6 @@
 
 	.mySlides img{
 		width: 100%;
-			 background-color: green;
 	}
 
 	.mySlides video{
@@ -160,6 +159,7 @@
 	}
 
 	.title-container {
+	background-color: blue;
 	  text-align: center;
 	  margin-top: 0vw;
 	  color: white;
@@ -169,6 +169,7 @@
 	}
 
 	.caption-container{
+		background-color: red;
 	  text-align: center;
 	  margin-top: 0vw;
 	  margin-left: 7vw;
@@ -180,6 +181,7 @@
 	
 	/* the little icons of all the images in the lightbox*/
 	.column { 
+		background-color: yellow;
 	  display: flex;
 	  flex-wrap: wrap;
 	  align-items: flex-start;
@@ -695,17 +697,18 @@ gestureZone.addEventListener('touchend', function(event) {
 }, false); 
 
 function handleGesture() {
-    if ((touchendX <= touchstartX)&&(abs(touchstartX-touchendX)>abs(touchendY-touchstartY))) {
+    if ((touchendX <= touchstartX)) {
         plusSlides(1);
     }
     
-    if ((touchendX >= touchstartX)&&(abs(touchstartX-touchendX)>abs(touchendY-touchstartY))) {
+    if ((touchendX >= touchstartX)) {
         plusSlides(-1);
     }
     
     // if (touchendY <= touchstartY) {
     //     alert('Swiped up');
-
+// &&(abs(touchstartX-touchendX)>abs(touchendY-touchstartY))
+// &&(abs(touchstartX-touchendX)>abs(touchendY-touchstartY))
     // }
     
     // if (touchendY >= touchstartY) {
