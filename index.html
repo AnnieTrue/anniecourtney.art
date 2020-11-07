@@ -13,7 +13,7 @@
 	#artworks{
 		display: grid;
 		grid-gap: 3vw;
-		background-color: pink;
+		background-color: green;
 	}
 	#artworks img{
 		width: 100%;
@@ -68,7 +68,7 @@
 	  width: 100%;
 	  padding-right: 0;
 	  padding-left: 0;
-	  
+
 	  height: 100%;
 	  overflow: auto;
 	  background-color: rgba(0, 0, 0,  .95);
@@ -693,11 +693,11 @@ gestureZone.addEventListener('touchend', function(event) {
 }, false); 
 
 function handleGesture() {
-    if (touchendX <= touchstartX) {
+    if (touchendX-touchstartX <= -10) {
         plusSlides(1);
     }
     
-    if (touchendX >= touchstartX) {
+    if (touchendX-touchstartX >= 10) {
         plusSlides(-1);
     }
     
