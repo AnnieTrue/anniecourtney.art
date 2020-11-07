@@ -11,7 +11,7 @@
 </head>
 <style>
 	#body{
-		background-color: red;
+		background-color: pink;
 	}
 	#artworks{
 		display: grid;
@@ -693,27 +693,25 @@ gestureZone.addEventListener('touchend', function(event) {
 
 function handleGesture() {
     if (touchendX <= touchstartX) {
-        alert('Swiped left');
         plusSlides(1);
     }
     
     if (touchendX >= touchstartX) {
-        alert('Swiped right');
         plusSlides(-1);
     }
     
-    if (touchendY <= touchstartY) {
-        alert('Swiped up');
+    // if (touchendY <= touchstartY) {
+    //     alert('Swiped up');
 
-    }
+    // }
     
-    if (touchendY >= touchstartY) {
-        alert('Swiped down');
-    }
+    // if (touchendY >= touchstartY) {
+    //     alert('Swiped down');
+    // }
     
-    if (touchendY === touchstartY) {
-        alert('Tap');
-    }
+    // if (touchendY === touchstartY) {
+    //     alert('Tap');
+    // }
 }
 
 </script>
