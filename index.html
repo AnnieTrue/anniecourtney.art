@@ -81,7 +81,6 @@
 	  /*background-color: #000000;*/
 	  margin-top: 2vw;
 	 /* margin: auto;*/
-	 background-color: red;
 	  padding: 0;
 	  max-width: 100%;
 	  /*max-height: 50vw;*/
@@ -96,6 +95,7 @@
 	  right: 3vw;
 	  font-size: 13vw;
 	  /*font-weight: bold;*/
+	  	 background-color: red;
 	}
 	.close:hover,
 	.close:focus {
@@ -119,6 +119,7 @@
 
 	.mySlides img{
 		width: 100%;
+			 background-color: green;
 	}
 
 	.mySlides video{
@@ -698,7 +699,7 @@ function handleGesture() {
         plusSlides(1);
     }
     
-    if ((touchendX <= touchstartX)&&(abs(touchstartX-touchendX)>abs(touchendY-touchstartY))) {
+    if ((touchendX >= touchstartX)&&(abs(touchstartX-touchendX)>abs(touchendY-touchstartY))) {
         plusSlides(-1);
     }
     
