@@ -13,7 +13,6 @@
 	#artworks{
 		display: grid;
 		grid-gap: 3vw;
-		background-color: black;
 	}
 	#artworks img{
 		width: 100%;
@@ -185,7 +184,6 @@
 	  width: 92.5vw;
 	  margin-left: 7.5vw;
 	  margin-bottom: 2vw;
-	  background-color: yellow;
 	  margin-right:0;
 	  padding-right: 0;
 	}
@@ -703,20 +701,11 @@ function handleGesture() {
     if ((touchendX >= touchstartX) && (Math.abs(touchstartX-touchendX)>Math.abs(touchendY-touchstartY))) {
         plusSlides(-1);
     }
+
+    if ((touchendY >= touchstartY) && (Math.abs(touchstartX-touchendX)<Math.abs(touchendY-touchstartY))){
+    	closeModal();
+    }
     
-    // if (touchendY <= touchstartY) {
-    //     alert('Swiped up');
-// &&(abs(touchstartX-touchendX)>abs(touchendY-touchstartY))
-// &&(abs(touchstartX-touchendX)>abs(touchendY-touchstartY))
-    // }
-    
-    // if (touchendY >= touchstartY) {
-    //     alert('Swiped down');
-    // }
-    
-    // if (touchendY === touchstartY) {
-    //     alert('Tap');
-    // }
 }
 
 </script>
