@@ -13,7 +13,7 @@
 	#artworks{
 		display: grid;
 		grid-gap: 3vw;
-		background-color: blue;
+		background-color: gray;
 	}
 	#artworks img{
 		width: 100%;
@@ -81,6 +81,7 @@
 	  /*background-color: #000000;*/
 	  margin-top: 2vw;
 	 /* margin: auto;*/
+	 background-color: red;
 	  padding: 0;
 	  max-width: 100%;
 	  /*max-height: 50vw;*/
@@ -118,8 +119,6 @@
 
 	.mySlides img{
 		width: 100%;
-		margin: 0;
-		padding: 0;
 	}
 
 	.mySlides video{
@@ -695,11 +694,11 @@ gestureZone.addEventListener('touchend', function(event) {
 }, false); 
 
 function handleGesture() {
-    if ((touchendX <= touchstartX)&&(touchstartX-touchendX>abs(touchendY-touchstartY))) {
+    if ((touchendX <= touchstartX)&&(abs(touchstartX-touchendX)>abs(touchendY-touchstartY))) {
         plusSlides(1);
     }
     
-    if ((touchendX <= touchstartX)&&(touchstartX-touchendX>abs(touchendY-touchstartY))) {
+    if ((touchendX <= touchstartX)&&(abs(touchstartX-touchendX)>abs(touchendY-touchstartY))) {
         plusSlides(-1);
     }
     
