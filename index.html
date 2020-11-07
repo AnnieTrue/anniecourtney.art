@@ -13,7 +13,7 @@
 	#artworks{
 		display: grid;
 		grid-gap: 3vw;
-		background-color: green;
+		background-color: black;
 	}
 	#artworks img{
 		width: 100%;
@@ -182,7 +182,7 @@
 	  flex-wrap: wrap;
 	  align-items: flex-start;
 	  flex-direction: row;
-	  width: 100vw;
+	  width: 92.5vw;
 	  margin-left: 7.5vw;
 	  margin-bottom: 2vw;
 	  background-color: yellow;
@@ -696,11 +696,11 @@ gestureZone.addEventListener('touchend', function(event) {
 }, false); 
 
 function handleGesture() {
-    if ((touchendX <= touchstartX)) {
+    if ((touchendX <= touchstartX) && (Math.abs(touchstartX-touchendX)>Math.abs(touchendY-touchstartY))) {
         plusSlides(1);
     }
     
-    if ((touchendX >= touchstartX)) {
+    if ((touchendX >= touchstartX) && (Math.abs(touchstartX-touchendX)>Math.abs(touchendY-touchstartY))) {
         plusSlides(-1);
     }
     
