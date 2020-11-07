@@ -21,11 +21,11 @@
 		margin-bottom: 0%;
 		padding: 0px;
 		cursor: pointer;
+		margin-top: 0%;
 	}
 	#artworks video{
 		width: 100%;
 		height: auto;
-		margin-top: 0%;
 		margin-bottom: 0%;
 		cursor: pointer;
 	}
@@ -666,6 +666,51 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
   titleText.innerHTML = dots[slideIndex-1].title;
   captionText.innerHTML = dots[slideIndex-1].alt;
+}
+
+
+// swiping:
+let touchstartX = 0;
+let touchstartY = 0;
+let touchendX = 0;
+let touchendY = 0;
+
+const gestureZone = document.getElementById('myModal');
+
+gestureZone.addEventListener('touchstart', function(event) {
+    touchstartX = event.changedTouches[0].screenX;
+    touchstartY = event.changedTouches[0].screenY;
+}, false);
+
+gestureZone.addEventListener('touchend', function(event) {
+    touchendX = event.changedTouches[0].screenX;
+    touchendY = event.changedTouches[0].screenY;
+    handleGesture();
+}, false); 
+
+function handleGesture() {
+    if (touchendX <= touchstartX) {
+        alert('Swiped left');
+        plusSlides(1);
+    }
+    
+    if (touchendX >= touchstartX) {
+        alert('Swiped right');
+        plusSlides(-1);
+    }
+    
+    if (touchendY <= touchstartY) {
+        alert('Swiped up');
+        
+    }
+    
+    if (touchendY >= touchstartY) {
+        alert('Swiped down');
+    }
+    
+    if (touchendY === touchstartY) {
+        alert('Tap');
+    }
 }
 
 </script>
