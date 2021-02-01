@@ -38,6 +38,7 @@ body{
 	margin-right: 13.5vw;
 	margin-left: auto;
 	margin-top: 1vw;
+	margin-bottom: 5vw;
 }
 #nav a{
 	color: black;
@@ -45,6 +46,7 @@ body{
 }
 #nav #artwork{
 	margin-right: 1.5vw;
+
 }
 #nav #shop{
 	margin-right: 1.8vw;
