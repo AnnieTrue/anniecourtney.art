@@ -1,0 +1,78 @@
+	.eye{
+		display: none;
+	}
+	.socket{
+		display: none;
+	}
+
+@media (min-width: 992px), (orientation: landscape){
+
+	/*general eye classes*/
+	.eye{
+		display: block;
+		position: relative;
+		background-color: black;
+		height: .5vw;
+		width: .5vw;
+		border-radius: 50%;
+		z-index: 100; /*above everything so high number*/
+
+	}
+	.socket{
+		display: block;
+		position: absolute;
+		overflow: hidden;
+		height: 1vw;
+		width: 1.5vw;
+		z-index: 99; /*just below the eyes*/
+
+	}
+	/*eye and socket for right girl*/
+	#socket_right{
+		left: 73.1vw;
+		top: 23.1vw;
+
+		height: .9vw;
+		width: 1.3vw;
+
+	}
+	#eye_right{
+		left: .25vw; /*range: 0vw to 1vw*/
+		top: .25vw; /*range: -.1vw to .5vw*/
+
+	}
+	/*eyes and sockets for left girl*/
+	#right_socket_left{
+		left: 20.1vw;
+		top: 7.8vw;
+
+		height: .5vw;
+		width: .28vw;
+	}
+	#right_eye_left{
+		height: .15vw;
+		width: .15vw;
+
+		left: .05vw;/*range: -.05vw to .15vw*/
+		top: .15vw;/*.15 range: 0vw to  .35vw*/
+
+	}
+	#left_socket_left{
+		left: 18.25vw;
+		top: 8.02vw;
+
+		height: .6vw;
+		width: .9vw;
+	}
+	#left_eye_left{
+		height: .25vw;
+		width: .25vw;
+
+		left: .35vw;/*range: 0vw to  .65vw*/
+		top: .15vw;/*range: 0vw to .4vw*/
+
+	}
+
+
+}
+

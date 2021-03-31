@@ -4,6 +4,7 @@
 	<!--shop page-->
 	<title>Annie Courtney</title>
 	<link rel = "stylesheet" type = "text/css" href = "genStyle.css" />
+	<link rel = "stylesheet" type = "text/css" href = "shop_style.css"/>
 	<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Josefin+Slab&display=swap" rel="stylesheet">
 	<link rel='icon' href='assets/favicon1.svg'/>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,7 +21,7 @@ function preview_image(event)
  reader.readAsDataURL(event.target.files[0]);
 }
 </script>
-
+<script defer src="shop_script.js"></script>
 
 </head>
 <style>
@@ -364,7 +365,7 @@ function preview_image(event)
 			font-size: 3vw;
 			padding-left: 1.2vw;
 			padding-right: 1vw;
-			margin-top: -1vw;
+			margin-top: -1.75vw;
 		}
 		#email_box .attach{
 			margin-right: 4vw;
@@ -565,7 +566,16 @@ function preview_image(event)
 </div>
 <div id="doodles">
 	<img id="doodle" src="assets/hanging_pictures.png">
+	<div id="right_socket_left" class="socket">
+		<div id="right_eye_left" class="eye"></div>
+	</div>
+	<div id="left_socket_left" class="socket">
+		<div id="left_eye_left" class="eye"></div>
+	</div>
 	<img id="doodle_left" src="assets/hanging_left.png">
+	<div id="socket_right" class="socket">
+		<div id="eye_right" class="eye"></div>
+	</div>
 	<img id="doodle_right" src="assets/hanging_right.png">
 	<div id="calc_box">
 		<input type="number" id="length" value="0">
