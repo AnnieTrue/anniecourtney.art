@@ -32,14 +32,14 @@
 		left: 33.1vw;
 		top: 3.9vw;
 
-		height: .55vw;
-		width: .8vw;
+		height: .58vw;
+		width: .85vw;
 	}
 	#left_eye{
 		height: .35vw;
 		width: .35vw;
 
-		top: .01vw; /* default: .01vw steps: -.05vw, .01vw, .2vw, .3vw */
+		top: .01vw; /* default: .01vw steps: -.05vw, .01vw, .15vw, .3vw */
 		left: .05vw; /* default: .05vw steps: -.1vw, .1vw, .25vw, .45vw */
 
 	}

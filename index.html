@@ -3,465 +3,13 @@
 <head>
 	<!--artwork page-->
 	<title>Annie Courtney</title>
-	<link rel = "stylesheet" type = "text/css" href = "genStyle.css" />
-	<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Josefin+Slab&display=swap" rel="stylesheet">
+	<link rel = "stylesheet" type = "text/css" href = "css/genStyle.css" />
+	<link rel="stylesheet" type="text/css" href="css/index.css"/>
 	<link rel="icon" href="assets/favicon1.svg"/>
-<!-- 	<link rel="apple-touch-icon-precomposed" href="favicon1.svg" /> -->
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script defer src="js/index.js"></script>
 </head>
-<style>
-	#artworks{
-		display: grid;
-		grid-gap: 3vw;
-	}
-	#artworks img{
-		width: 100%;
-		height: auto;
-		margin-top: 0%;
-		margin-bottom: 0%;
-		padding: 0px;
-		cursor: pointer;
-		margin-top: 0%;
-	}
-	#artworks video{
-		width: 100%;
-		height: auto;
-		margin-bottom: 0%;
-		cursor: pointer;
-	}
-
-	#back2top{
-	  display: none;
-	  position: fixed;
-	  bottom: 5vw;
-	  right: 5vw;
-	  border: none;
-	  outline: none;
-	  color: #000000;
-	  background-color: #00000050;
-	  cursor: pointer;
-	  font-family: 'Amatic SC', serif;
-	  font-weight: bolder;
-	  font-size: 7vw;
-	  padding-bottom: 1vw;
-	  padding-left: 1vw;
-	  padding-right: 1vw;
-	  border-radius: 0vw;
-	  /*font-weight: 700;*/
-	}
-	#back2top:hover {
-	  color: #ff7800;
-	  background-color: black;
-	}
-
-/*mobile lightbox below*/
-
-	/* The Modal (background) */
-	.modal {
-	  display: none;
-	  position: fixed;
-	  z-index: 1;
-	  padding-top: 10vw;
-	  left: 0;
-	  top: 0;
-	  width: 100%;
-	  padding-right: 0;
-	  padding-left: 0;
-
-	  height: 100%;
-	  overflow: auto;
-	  background-color: rgba(0, 0, 0,  .95);
-
-	}
-
-	/* Modal Content */
-	.modal-content {
-	  position: relative;
-	  /*background-color: #000000;*/
-	  margin-top: 2vw;
-	 /* margin: auto;*/
-	  padding: 0;
-	  max-width: 100%;
-	  /*max-height: 50vw;*/
-	 /* max-width: 1200px;*/
-	}
-
-	/* The Close Button */
-	.close {
-	  color: white;
-	  position: absolute;
-	  top: 0vw;
-	  right: 3vw;
-	  font-size: 13vw;
-	  /*font-weight: bold;*/
-	}
-	.close:hover,
-	.close:focus {
-	  color: #ff7800;
-	  text-decoration: none;
-	}
-
-	/* Number text (1/3 etc) */
-	.numbertext {
-	  color: #ffffff50;
-	  font-size: 5vw;
-	  margin-top: -7vw;
-	  margin-left: 3vw;
-	  /*padding: 8px 12px;*/
-	  position: absolute;
-	}
-
-	.mySlides {
-	  display: none;
-	}
-
-	.mySlides img{
-		width: 100%;
-	}
-
-	.mySlides video{
-		width: 100%;
-	}
-
-	.cursor {
-	  cursor: pointer;
-	}
-
-	/* Next & previous buttons */
-	.prev,
-	.next {
-	  position: absolute;
-	  width: auto;
-	  padding: 1vw;
-	  margin-top: 0vw;
-	  color: white;
-	  font-family: 'Josefin Slab', serif;
-	  font-weight: 400;
-	  font-size: 8vw;
-	}
-	.prev{
-		left: 5vw;
-	}
-
-	/* Position the "next button" to the right */
-	.next {
-	  right: 5vw;
-	  /*border-radius: 3px 0 0 3px;*/
-	}
-
-	/* On hover, add a black background color with a little bit see-through */
-	.prev:hover,
-	.next:hover {
-		cursor: pointer;
-	  color: #ff7800;
-	}
-
-	.title-container {
-	  text-align: center;
-	  margin-top: 0vw;
-	  color: white;
-	  font-size: 8vw;
-	  font-family: 'Amatic SC', cursive;
-	  font-weight: 700;
-	}
-
-	.caption-container{
-	  text-align: center;
-	  margin-top: 0vw;
-	  margin-left: 7vw;
-	  margin-right: 7vw;
-	  color: white;
-	  font-size: 5vw;
-	  font-family: 'Josefin Slab', serif;
-	}
-	
-	/* the little icons of all the images in the lightbox*/
-	.column { 
-	  display: flex;
-	  flex-wrap: wrap;
-	  align-items: flex-start;
-	  flex-direction: row;
-	  width: 92.5vw;
-	  margin-left: 7.5vw;
-	  margin-bottom: 2vw;
-	  margin-right:0;
-	  padding-right: 0;
-	}
-	.column img{
-	  margin: 1vw;
-	  width: 15vw;
-	}
-	/*unselected little icons*/
-	.demo {
-	  opacity: .25;
-	}
-	/*selected little icon*/
-	.active,
-	.demo:hover {
-	  opacity: 1;
-	}
-
-/*desktop below*/
-
-	@media (min-width: 992px), (orientation: landscape) {
-		#back2top {
-		  bottom: 2vw;
-		  right: 2vw;
-		  color: #ff780075;
-		  background-color: #00000050;
-		  font-size: 5vw;
-		  border-radius: 0vw;
-		  padding-bottom: 1vw;
-		  padding-right: .5vw;
-		  padding-left: .5vw;
-		  right: 3vw;
-		}
-		#artworks{
-			margin-right: 1vw;
-			margin-left: 1vw;
-			display: grid;
-		    grid-template-columns: repeat(15, 1fr);
-		    grid-template-rows: repeat(23, 10vw);
-		    grid-gap: 1vw;
-		}
-		#artworks img{
-			width: 100%;
-		    height: 100%;
-		    object-fit: cover;
-
-		}
-		#artworks video{
-			width: 100%;
-		    height: 100%;
-		    object-fit: cover;
-		}
-		#owl{
-			grid-column-start: 1;
-		    grid-column-end: 7;
-		    grid-row-start: 1;
-		    grid-row-end: 7;
-		}
-		#raven{
-			grid-column-start:7;
-		    grid-column-end: 16;
-		    grid-row-start: 1;
-		    grid-row-end: 5;
-		}
-		#love{
-			grid-column-start: 7;
-		    grid-column-end:16;
-		    grid-row-start: 9;
-		    grid-row-end: 12;
-		}
-		#braid{
-			grid-column-start: 1;
-		    grid-column-end: 7;
-		    grid-row-start: 7;
-		    grid-row-end: 9;
-		}
-		#flatbill{
-			grid-column-start:7;
-		    grid-column-end: 16;
-		    grid-row-start: 5;
-		    grid-row-end: 9;
-		}
-		#fear{
-			grid-column-start: 1;
-		    grid-column-end: 7;
-		    grid-row-start: 9;
-		    grid-row-end: 12;
-		}
-		#scream{
-			grid-column-start: 1;
-		    grid-column-end: 9;
-		    grid-row-start: 12;
-		    grid-row-end: 15;
-		}
-		#flower{
-			grid-column-start: 9;
-		    grid-column-end: 16;
-		    grid-row-start: 12;
-		    grid-row-end: 16;
-		}
-		#earthling{
-			grid-column-start: 1;
-			grid-column-end: 5;
-		    grid-row-start: 15;
-		    grid-row-end: 18;
-		}
-		#mouth{
-			grid-column-start: 5;
-		    grid-column-end: 9;
-		    grid-row-start: 15;
-		    grid-row-end: 18;
-		}
-		#abstract{
-			grid-column-start: 9;
-			grid-column-end: 16;
-		    grid-row-start: 16;
-		    grid-row-end: 18;
-		}
-		#privacy{
-			grid-column-start: 1;
-		    grid-column-end: 9;
-		    grid-row-start: 18;
-		    grid-row-end: 21;
-		}
-		#self{
-			grid-column-start: 9;
-		    grid-column-end: 16;
-		    grid-row-start: 18;
-		    grid-row-end: 21;
-		}
-		#moai{
-			grid-column-start: 1;
-		    grid-column-end: 8;
-		    grid-row-start: 21;
-		    grid-row-end: 24;
-		}
-		#spider{
-			grid-column-start: 8;
-		    grid-column-end: 16;
-		    grid-row-start: 21;
-		    grid-row-end: 24;
-		}
-
-/*desktop lightbox below*/
-
-		/* The Modal (background) */
-		.modal {
-		  display: none;
-		  position: fixed;
-		  z-index: 1;
-		  padding-top: 0vw;
-		  left: 0;
-		  top: 0;
-		  width: 100%;
-		  height: 100%;
-		  overflow: auto;
-		}
-
-		/* Modal Content */
-		.modal-content {
-		  position: relative;
-		  margin-top: 1vw;
-		  padding: 0;
-		  margin-left: 1vw;
-		  margin-right: 1vw;
-		}
-
-		.mySlides{
-		  margin-top: 4vw;
-		  margin-left: 4vw;
-		  margin-right: 5vw;
-		  display: none;
-		  width: 50%;
-		  margin-bottom: 5vw;
-		}
-
-		.mySlides img{
-		  display: block;
-		  width: 50vw;
-		  height: auto;
-		  max-height: 50vw;
-		  margin-left: auto;
-		  margin-right: auto;
-		}
-		#LMG{
-		  width: 35vw;
-		  height: auto;
-		  margin-left: auto;
-		  margin-right: auto;
-		}
-
-		.mySlides video{
-		  display: block;
-		  height: auto;
-		  width: 50vw;
-		  margin-left: auto;
-		  margin-right: auto;
-		}
-
-		/* The Close Button */
-		.close {
-		  z-index: 99;
-		  color: white;
-		  position: absolute;
-		  top: -1vw;
-		  right: 1vw;
-		  font-size: 5vw;
-		}
-
-		/* Number text (1/15 etc) */
-		.numbertext {
-		  font-size: 2vw;
-		  margin-top: -2.75vw;
-		  margin-left: -3.5vw;
-		  position: absolute;
-		}
-
-		/* Next & previous buttons */
-		.prev,
-		.next {
-		  position: absolute;
-		  width: auto;
-		  font-size: 4vw;
-		}
-		.prev{
-			left: 0;
-			padding-left: 4vw;
-		}
-
-		/* Position the "next button" to the right */
-		.next {
-		  right: 0;
-		  padding-right: 5vw;
-		}
-
-		/* the little icons of all the images in the lightbox*/
-		.column { 
-		  display: flex;
-		  flex-wrap: wrap;
-		  align-items: flex-start;
-		  flex-direction: row;
-		  width: 100vw;
-		  margin-left: 1vw;
-		  margin-bottom: 2vw;
-		}
-		.column img{
-		  margin: 1vw;
-		  width: 10vw;
-		}
-
-		.title-container {
-		  position: absolute;
-		  text-align: center;
-		  width: 50vw;
-		  top: 1vw;
-		  left: 48vw;
-		  font-size: 4vw;
-		  margin-left: 4vw;
-		  margin-right: 4vw;
-		}
-
-		.caption-container{
-		  position: absolute;
-		  text-align: center;
-		  width: 50vw;
-		  top: 5vw;
-		  left: 48vw;
-		  margin-left: 4vw;
-		  margin-right: 4vw;
-		  padding-left: 4vw;
-		  padding-right: 4vw;
-		  margin-top: 1vw;
-		  font-size: 2vw;
-		}
-
-}
-
-</style>
 <body>
+	<!-- header -->
 	<div id="box">
 		<div class="bar1"></div>
 		<div class="bar1 corners"></div>
@@ -476,239 +24,144 @@
   			<a id="contact" href="contact.html">contact me</a>
 		</div>
 	</div>
-<div id="inner_box">
-<!--page specific-->
-	<div id="artworks">
-		<img id="raven" onclick="openModal();currentSlide(1)" src="assets/artwork/nothing more.jpg" alt="painting of a crow/raven with a human eye">
-		<img id="owl" onclick="openModal();currentSlide(2)" src="assets/artwork/Losing My Grip.jpg" alt="painting of an owl sitting on a branch with human hands instead of talons">
-		<img id="flatbill" onclick="openModal();currentSlide(3)" src="assets/artwork/En Route.JPG" alt="painting of a rose flatbill bird flying with human arms under her/his/their wings">
-		<img id="fear" onclick="openModal();currentSlide(4)" src="assets/artwork/fear.jpg" alt="paper cutout graphic of a hand partially covering an eye with the reflection of a monster hand in the eye">
-		<video id="love" onclick="openModal();currentSlide(5)" poster="assets/artwork/thumbnails/love_cover.png" controls><source src="assets/artwork/love.mp4" type="video/mp4" alt="animation of a girl getting her hair pushed behind her ear by someone out of frame, and then leaking pink goo from the eyes, nose, and mouth and falling over">Your browser does not support the video tag.</video>
-		<img id="braid" onclick="openModal();currentSlide(6)" src="assets/artwork/dahaht.jpg" alt="sketchy illustration of a girl braiding her hair">
-		<img id="flower" onclick="openModal();currentSlide(7)" src="assets/artwork/photosynthesmize.jpg" alt="illlustration of a flower with a human face">
-		<video id="scream" onclick="openModal();currentSlide(8)" controls src="assets/artwork/scream.mov" type="video/mov" poster="assets/artwork/thumbnails/scream_cover.png" alt="animation of a scream switch being pulling inside a mouth">Your browser does not support the video tag.</video>
-		<video id="abstract" onclick="openModal();currentSlide(9)" poster="assets/artwork/thumbnails/tcaoy_cover.png" controls><source src="assets/artwork/tcaoy.mp4" type="video/mp4" alt="animation of abstract light and colors">Your browser does not support the video tag.</video>
-		<img id="mouth" onclick="openModal();currentSlide(10)" src="assets/artwork/mouth.gif" alt="animation of a mouth opeing and a beetle crawling on the tongue">
-		<video id="privacy" onclick="openModal();currentSlide(11)" poster="assets/artwork/thumbnails/ijwsp_cover.png" controls><source src="assets/artwork/ijwsp.mp4" type="video/mp4" alt="demo of an app where a spider creature gets scared if you make noise">Your browser does not support the video tag.</video>
-		<img id="self" onclick="openModal();currentSlide(12)" src="assets/artwork/selfportrait.PNG" alt="digital drawing of a girl and bugs">
-		<video id="moai" onclick="openModal();currentSlide(13)" poster="assets/artwork/thumbnails/moai_cover.png" controls src="assets/artwork/Among the Moai.mov" type="video/mov" alt="3d animation of a ufo bringing the statues of easter island to life">Your browser does not support the video tag.</video>
-		<video id="spider" onclick="openModal();currentSlide(14)" poster="assets/artwork/thumbnails/spider_cover.png" controls src="assets/artwork/spider.mov" type="video/mov" alt="3d animation of a spider with a human-like head dancing">Your browser does not support the video tag.</video>
-		<img id="earthling" onclick="openModal();currentSlide(15)" src="assets/artwork/earthling.gif" alt="animation of an eye opening and plants growing out and an ant crawling out">
+
+	<!-- page content -->
+	<div id="inner_box">
+		<!--artworks-->
+		<div id="artworks">
+			<img id="raven" onclick="openModal();currentSlide(1)" src="assets/artwork/nothing more.jpg" alt="painting of a crow/raven with a human eye">
+			<img id="owl" onclick="openModal();currentSlide(2)" src="assets/artwork/Losing My Grip.jpg" alt="painting of an owl sitting on a branch with human hands instead of talons">
+			<img id="flatbill" onclick="openModal();currentSlide(3)" src="assets/artwork/En Route.JPG" alt="painting of a rose flatbill bird flying with human arms under her/his/their wings">
+			<img id="fear" onclick="openModal();currentSlide(4)" src="assets/artwork/fear.jpg" alt="paper cutout graphic of a hand partially covering an eye with the reflection of a monster hand in the eye">
+			<video id="love" onclick="openModal();currentSlide(5)" poster="assets/artwork/thumbnails/love_cover.png" controls><source src="assets/artwork/love.mp4" type="video/mp4" alt="animation of a girl getting her hair pushed behind her ear by someone out of frame, and then leaking pink goo from the eyes, nose, and mouth and falling over">Your browser does not support the video tag.</video>
+			<img id="braid" onclick="openModal();currentSlide(6)" src="assets/artwork/dahaht.jpg" alt="sketchy illustration of a girl braiding her hair">
+			<img id="flower" onclick="openModal();currentSlide(7)" src="assets/artwork/photosynthesmize.jpg" alt="illlustration of a flower with a human face">
+			<video id="scream" onclick="openModal();currentSlide(8)" controls src="assets/artwork/scream.mov" type="video/mov" poster="assets/artwork/thumbnails/scream_cover.png" alt="animation of a scream switch being pulling inside a mouth">Your browser does not support the video tag.</video>
+			<video id="abstract" onclick="openModal();currentSlide(9)" poster="assets/artwork/thumbnails/tcaoy_cover.png" controls><source src="assets/artwork/tcaoy.mp4" type="video/mp4" alt="animation of abstract light and colors">Your browser does not support the video tag.</video>
+			<img id="mouth" onclick="openModal();currentSlide(10)" src="assets/artwork/mouth.gif" alt="animation of a mouth opeing and a beetle crawling on the tongue">
+			<video id="privacy" onclick="openModal();currentSlide(11)" poster="assets/artwork/thumbnails/ijwsp_cover.png" controls><source src="assets/artwork/ijwsp.mp4" type="video/mp4" alt="demo of an app where a spider creature gets scared if you make noise">Your browser does not support the video tag.</video>
+			<img id="self" onclick="openModal();currentSlide(12)" src="assets/artwork/selfportrait.PNG" alt="digital drawing of a girl and bugs">
+			<video id="moai" onclick="openModal();currentSlide(13)" poster="assets/artwork/thumbnails/moai_cover.png" controls src="assets/artwork/Among the Moai.mov" type="video/mov" alt="3d animation of a ufo bringing the statues of easter island to life">Your browser does not support the video tag.</video>
+			<video id="spider" onclick="openModal();currentSlide(14)" poster="assets/artwork/thumbnails/spider_cover.png" controls src="assets/artwork/spider.mov" type="video/mov" alt="3d animation of a spider with a human-like head dancing">Your browser does not support the video tag.</video>
+			<img id="earthling" onclick="openModal();currentSlide(15)" src="assets/artwork/earthling.gif" alt="animation of an eye opening and plants growing out and an ant crawling out">
+		</div>
+
+		<!-- lightbox/modal -->
+		<div id="myModal" class="modal">
+	  		<span class="close cursor" onclick="closeModal()">&times;</span>
+	  		<div class="modal-content">
+
+		    	<div class="mySlides">
+		      		<div class="numbertext">1 / 15</div>
+		      		<img src="assets/artwork/nothing more.jpg">
+		    	</div>
+
+		    	<div class="mySlides">
+		      		<div class="numbertext">2 / 15</div>
+		      		<img id="LMG" src="assets/artwork/Losing My Grip.jpg">
+		    	</div>
+
+		    	<div class="mySlides">
+		      		<div class="numbertext">3 / 15</div>
+		      		<img src="assets/artwork/En Route.JPG">
+		    	</div>
+		    	<div class="mySlides">
+		      		<div class="numbertext">4 / 15</div>
+		      		<img src="assets/artwork/fear.jpg">
+		    	</div>
+
+		    	<div class="mySlides">
+		      		<div class="numbertext">5 / 15</div>
+		      		<video poster="assets/artwork/thumbnails/love_cover.png" controls><source src="assets/artwork/love.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+		    	</div>
+
+		    	<div class="mySlides">
+		      		<div class="numbertext">6 / 15</div>
+		      		<img src="assets/artwork/dahaht.jpg">
+		    	</div>
+
+		        <div class="mySlides">
+		      		<div class="numbertext">7 / 15</div>
+		      		<img src="assets/artwork/photosynthesmize.jpg">
+		    	</div>
+
+		    	<div class="mySlides">
+		      		<div class="numbertext">8 / 15</div>
+					<video controls src="assets/artwork/scream.mov" type="video/mov" poster="assets/artwork/thumbnails/scream_cover.png">Your browser does not support the video tag.</video>
+		    	</div>
+
+		    	<div class="mySlides">
+		      		<div class="numbertext">9 / 15</div>
+		      		<video poster="assets/artwork/thumbnails/tcaoy_cover.png" controls><source src="assets/artwork/tcaoy.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+		    	</div>
+		        
+		        <div class="mySlides">
+		      		<div class="numbertext">10 / 15</div>
+		      		<img src="assets/artwork/mouth.gif">
+		    	</div>
+
+		    	<div class="mySlides">
+		      		<div class="numbertext">11 / 15</div>
+		      		<video poster="assets/artwork/thumbnails/ijwsp_cover.png" controls><source src="assets/artwork/ijwsp.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+		    	</div>
+
+		    	<div class="mySlides">
+		      		<div class="numbertext">12 / 15</div>
+		      		<img src="assets/artwork/selfportrait.PNG">
+		    	</div>
+		        
+		        <div class="mySlides">
+		      		<div class="numbertext">13 / 15</div>
+		      		<video poster="assets/artwork/thumbnails/moai_cover.png" controls src="assets/artwork/Among the Moai.mov" type="video/mov">Your browser does not support the video tag.</video>
+		    	</div>
+
+		    	<div class="mySlides">
+		      		<div class="numbertext">14 / 15</div>
+		      		<video poster="assets/artwork/thumbnails/spider_cover.png" controls src="assets/artwork/spider.mov" type="video/mov">Your browser does not support the video tag.</video>
+		    	</div>
+
+		    	<div class="mySlides">
+		      		<div class="numbertext">15 / 15</div>
+		      		<img src="assets/artwork/earthling.gif">
+		    	</div>
+		    
+		    	<div class="title-container">
+			    	<a class="prev" onclick="plusSlides(-1); document.querySelectorAll('video').forEach(vid => vid.pause());">&#10094;</a>
+			    	<a id="myTitle"></a>
+			    	<a class="next" onclick="plusSlides(1); document.querySelectorAll('video').forEach(vid => vid.pause());">&#10095;</a>
+		    	</div>
+
+		    	<div class="caption-container">
+		      		<p id="caption"></p>
+		    	</div>
+
+		        <div class="column">
+			      	<img class="demo cursor" src="assets/artwork/nothing more.jpg" onclick="currentSlide(1)" title="Nothing More" alt="acrylic on canvas">
+			      	<img class="demo cursor" src="assets/artwork/Losing My Grip.jpg" onclick="currentSlide(2)" title="Losing My Grip" alt="acrylic on canvas">
+			      	<img class="demo cursor" src="assets/artwork/En Route.JPG" onclick="currentSlide(3)" title="En Route" alt="acrylic on canvas">
+			      	<img class="demo cursor" src="assets/artwork/fear.jpg" onclick="currentSlide(4)" title="Encounter" alt="paper and glue">
+			      	<img class="demo cursor" src="assets/artwork/thumbnails/love_cover.png" onclick="currentSlide(5)" title="Love" alt="animated in Photoshop">
+			      	<img class="demo cursor" src="assets/artwork/dahaht.jpg" onclick="currentSlide(6)" title="Does anyone have a hair tie?" alt="drawn in Photoshop">
+			      	<img class="demo cursor" src="assets/artwork/photosynthesmize.jpg" onclick="currentSlide(7)" title="Photosynthesmize" alt="drawn in Photoshop">
+			      	<img class="demo cursor" src="assets/artwork/thumbnails/scream_cover.png" onclick="currentSlide(8)" title="Scream" alt="animated in After Effects and Photoshop">
+			      	<img class="demo cursor" src="assets/artwork/thumbnails/tcaoy_cover.png" onclick="currentSlide(9)" title="They're Crawling All Over You" alt="animated in After Effects, music sampled from Marina and the Diamonds">
+			      	<img class="demo cursor" src="assets/artwork/mouth.gif" onclick="currentSlide(10)" title="Taste(buds)" alt="animated in Photoshop">
+			      	<img class="demo cursor" src="assets/artwork/thumbnails/ijwsp_cover.png" onclick="currentSlide(11)" title="I just want some privacy." alt="This piece is a sound-reactive application that was coded in Max, a visual programming language, and animated in After Effects and Photoshop. Both the interaction and the movement were designed to give an impossible creature just enough life to connect with people.">
+			      	<img class="demo cursor" src="assets/artwork/selfportrait.PNG" onclick="currentSlide(12)" title="Portrait" alt="made with Photoshop">
+			      	<img class="demo cursor" src="assets/artwork/thumbnails/moai_cover.png" onclick="currentSlide(13)" title="Among the Moai" alt="animated in Blender and After Effects">
+			      	<img class="demo cursor" src="assets/artwork/thumbnails/spider_cover.png" onclick="currentSlide(14)" title="Creeper" alt="made with Blender, Unity, After Effects, and Final Cut Pro">
+			      	<img class="demo cursor" src="assets/artwork/earthling.gif" onclick="currentSlide(15)" title="Earthling" alt="animated in Photoshop">
+		    	</div>
+
+	  		</div>
+		</div>
+
+		<!-- 'back to top' button -->
+		<button onclick="topFunction()" id="back2top" title="Go to top">back to top</button>
+
 	</div>
 
-<!-- lightbox -->
-	<div id="myModal" class="modal">
-  <span class="close cursor" onclick="closeModal()">&times;</span>
-  <div class="modal-content">
-
-    <div class="mySlides">
-      <div class="numbertext">1 / 15</div>
-      <img src="assets/artwork/nothing more.jpg">
-    </div>
-
-    <div class="mySlides">
-      <div class="numbertext">2 / 15</div>
-      <img id="LMG" src="assets/artwork/Losing My Grip.jpg">
-    </div>
-
-    <div class="mySlides">
-      <div class="numbertext">3 / 15</div>
-      <img src="assets/artwork/En Route.JPG">
-    </div>
-    <div class="mySlides">
-      <div class="numbertext">4 / 15</div>
-      <img src="assets/artwork/fear.jpg">
-    </div>
-
-    <div class="mySlides">
-      <div class="numbertext">5 / 15</div>
-      <video poster="assets/artwork/thumbnails/love_cover.png" controls><source src="assets/artwork/love.mp4" type="video/mp4">Your browser does not support the video tag.</video>
-    </div>
-
-    <div class="mySlides">
-      <div class="numbertext">6 / 15</div>
-      <img src="assets/artwork/dahaht.jpg">
-    </div>
-        <div class="mySlides">
-      <div class="numbertext">7 / 15</div>
-      <img src="assets/artwork/photosynthesmize.jpg">
-    </div>
-
-    <div class="mySlides">
-      <div class="numbertext">8 / 15</div>
-		<video controls src="assets/artwork/scream.mov" type="video/mov" poster="assets/artwork/thumbnails/scream_cover.png">Your browser does not support the video tag.</video>
-    </div>
-
-    <div class="mySlides">
-      <div class="numbertext">9 / 15</div>
-      	<video poster="assets/artwork/thumbnails/tcaoy_cover.png" controls><source src="assets/artwork/tcaoy.mp4" type="video/mp4">Your browser does not support the video tag.</video>
-    </div>
-        <div class="mySlides">
-      <div class="numbertext">10 / 15</div>
-      <img src="assets/artwork/mouth.gif">
-    </div>
-
-    <div class="mySlides">
-      <div class="numbertext">11 / 15</div>
-      	<video poster="assets/artwork/thumbnails/ijwsp_cover.png" controls><source src="assets/artwork/ijwsp.mp4" type="video/mp4">Your browser does not support the video tag.</video>
-    </div>
-
-    <div class="mySlides">
-      <div class="numbertext">12 / 15</div>
-      <img src="assets/artwork/selfportrait.PNG">
-    </div>
-        <div class="mySlides">
-      <div class="numbertext">13 / 15</div>
-      <video poster="assets/artwork/thumbnails/moai_cover.png" controls src="assets/artwork/Among the Moai.mov" type="video/mov">Your browser does not support the video tag.</video>
-    </div>
-
-    <div class="mySlides">
-      <div class="numbertext">14 / 15</div>
-      <video poster="assets/artwork/thumbnails/spider_cover.png" controls src="assets/artwork/spider.mov" type="video/mov">Your browser does not support the video tag.</video>
-    </div>
-
-    <div class="mySlides">
-      <div class="numbertext">15 / 15</div>
-      <img src="assets/artwork/earthling.gif">
-    </div>
-    
-    <div class="title-container">
-	    <a class="prev" onclick="plusSlides(-1); document.querySelectorAll('video').forEach(vid => vid.pause());">&#10094;</a>
-	    <a id="myTitle"></a>
-	    <a class="next" onclick="plusSlides(1); document.querySelectorAll('video').forEach(vid => vid.pause());">&#10095;</a>
-    </div>
-    <div class="caption-container">
-      <p id="caption"></p>
-    </div>
-
-        <div class="column">
-	      <img class="demo cursor" src="assets/artwork/nothing more.jpg" onclick="currentSlide(1)" title="Nothing More" alt="acrylic on canvas">
-	      <img class="demo cursor" src="assets/artwork/Losing My Grip.jpg" onclick="currentSlide(2)" title="Losing My Grip" alt="acrylic on canvas">
-	      <img class="demo cursor" src="assets/artwork/En Route.JPG" onclick="currentSlide(3)" title="En Route" alt="acrylic on canvas">
-	      <img class="demo cursor" src="assets/artwork/fear.jpg" onclick="currentSlide(4)" title="Encounter" alt="paper and glue">
-	      <img class="demo cursor" src="assets/artwork/thumbnails/love_cover.png" onclick="currentSlide(5)" title="Love" alt="animated in Photoshop">
-	      <img class="demo cursor" src="assets/artwork/dahaht.jpg" onclick="currentSlide(6)" title="Does anyone have a hair tie?" alt="drawn in Photoshop">
-	      <img class="demo cursor" src="assets/artwork/photosynthesmize.jpg" onclick="currentSlide(7)" title="Photosynthesmize" alt="drawn in Photoshop">
-	      <img class="demo cursor" src="assets/artwork/thumbnails/scream_cover.png" onclick="currentSlide(8)" title="Scream" alt="animated in After Effects and Photoshop">
-	      <img class="demo cursor" src="assets/artwork/thumbnails/tcaoy_cover.png" onclick="currentSlide(9)" title="They're Crawling All Over You" alt="animated in After Effects, music sampled from Marina and the Diamonds">
-	      <img class="demo cursor" src="assets/artwork/mouth.gif" onclick="currentSlide(10)" title="Taste(buds)" alt="animated in Photoshop">
-	      <img class="demo cursor" src="assets/artwork/thumbnails/ijwsp_cover.png" onclick="currentSlide(11)" title="I just want some privacy." alt="This piece is a sound-reactive application that was coded in Max, a visual programming language, and animated in After Effects and Photoshop. Both the interaction and the movement were designed to give an impossible creature just enough life to connect with people.">
-	      <img class="demo cursor" src="assets/artwork/selfportrait.PNG" onclick="currentSlide(12)" title="Portrait" alt="made with Photoshop">
-	      <img class="demo cursor" src="assets/artwork/thumbnails/moai_cover.png" onclick="currentSlide(13)" title="Among the Moai" alt="animated in Blender and After Effects">
-	      <img class="demo cursor" src="assets/artwork/thumbnails/spider_cover.png" onclick="currentSlide(14)" title="Creeper" alt="made with Blender, Unity, After Effects, and Final Cut Pro">
-	      <img class="demo cursor" src="assets/artwork/earthling.gif" onclick="currentSlide(15)" title="Earthling" alt="animated in Photoshop">
-    </div>
-
-  </div>
-</div>
-
-<!-- lightbox above -->
-
-	<button onclick="topFunction()" id="back2top" title="Go to top">back to top</button>
-<!-- ^^^ page specific ^^^ -->
-</div>
 	<div id="footer">All work &#169; Annie Courtney unless otherwise  noted.</div>
-
-<script>
-//Get the button
-var mybutton = document.getElementById("back2top");
-
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
-  }
-}
-
-
-
-// When the user clicks on the button, scroll to the top of the document
-function topFunction() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-}
-
-//lightbox below 
-
-function openModal() {
-  document.getElementById("myModal").style.display = "block";
-}
-
-function closeModal() {
-  document.getElementById("myModal").style.display = "none";
-}
-
-var slideIndex = 1;
-showSlides(slideIndex);
-
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("demo");
-  var titleText = document.getElementById("myTitle");
-  var captionText = document.getElementById("caption");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
-  titleText.innerHTML = dots[slideIndex-1].title;
-  captionText.innerHTML = dots[slideIndex-1].alt;
-}
-
-
-// swiping:
-let touchstartX = 0;
-let touchstartY = 0;
-let touchendX = 0;
-let touchendY = 0;
-
-const gestureZone = document.getElementById('myModal');
-
-gestureZone.addEventListener('touchstart', function(event) {
-    touchstartX = event.changedTouches[0].screenX;
-    touchstartY = event.changedTouches[0].screenY;
-}, false);
-
-gestureZone.addEventListener('touchend', function(event) {
-    touchendX = event.changedTouches[0].screenX;
-    touchendY = event.changedTouches[0].screenY;
-    handleGesture();
-}, false); 
-
-function handleGesture() {
-    if ((touchendX <= touchstartX) && (Math.abs(touchstartX-touchendX)>Math.abs(touchendY-touchstartY))) {
-        plusSlides(1);
-    }
-    
-    if ((touchendX >= touchstartX) && (Math.abs(touchstartX-touchendX)>Math.abs(touchendY-touchstartY))) {
-        plusSlides(-1);
-    }
-
-    // if ((touchendY >= touchstartY) && (Math.abs(touchstartX-touchendX)<Math.abs(touchendY-touchstartY))){
-    // 	closeModal();
-    // }
-    
-}
-
-</script>
 
 </body>
 </html>

@@ -12,7 +12,7 @@ document.onmousemove = function(e){
 }
 
 function moveLeftEye(x,y){
-	/* top default: .01vw steps: -.05vw, .01vw, .2vw, .3vw */
+	/* top default: .01vw steps: -.05vw, .01vw, .15vw, .3vw*/
 	/* left default: .05vw steps: -.1vw, .1vw, .25vw, .45vw */
 
 	//looking left and right
@@ -41,7 +41,7 @@ function moveLeftEye(x,y){
 		L_EYE.style.top = .01 + 'vw';
 	}else if(L_EYE.getBoundingClientRect().top - y < 0 && L_EYE.getBoundingClientRect().top - y > -100){
 		//look slightly down
-		L_EYE.style.top = .2+'vw';
+		L_EYE.style.top = .15+'vw';
 	}else if(L_EYE.getBoundingClientRect().top - y < -100){
 		//look down
 		L_EYE.style.top = .3+'vw';

@@ -30,9 +30,9 @@
 	/*eye and socket for right girl*/
 	#socket_right{
 		left: 73.1vw;
-		top: 23.1vw;
+		top: 23vw;
 
-		height: .9vw;
+		height: .95vw;
 		width: 1.3vw;
 
 	}
@@ -50,8 +50,8 @@
 		width: .28vw;
 	}
 	#right_eye_left{
-		height: .15vw;
-		width: .15vw;
+		height: .2vw;
+		width: .2vw;
 
 		left: .05vw;/*range: -.05vw to .15vw*/
 		top: .15vw;/*.15 range: 0vw to  .35vw*/
