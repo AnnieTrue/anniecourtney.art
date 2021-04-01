@@ -1,0 +1,68 @@
+.eye{
+	display: none;
+}
+.socket{
+	display: none;
+}
+@media (min-width: 992px), (orientation: landscape) {
+
+	/*general eye classes*/
+	.eye{
+		display: block;
+		position: relative;
+		background-color: black;
+		height: .5vw;
+		width: .5vw;
+		border-radius: 50%;
+		z-index: 100; /*above everything so high number*/
+
+	}
+	.socket{
+		display: block;
+		position: absolute;
+		overflow: hidden;
+		height: 1vw;
+		width: 1.5vw;
+		z-index: 99; /*just below the eyes*/
+
+	}
+
+	/*left eye and socket*/
+	#left_socket{
+		left: 33.1vw;
+		top: 3.9vw;
+
+		height: .55vw;
+		width: .8vw;
+	}
+	#left_eye{
+		height: .35vw;
+		width: .35vw;
+
+		top: .01vw; /* default: .01vw steps: -.05vw, .01vw, .2vw, .3vw */
+		left: .05vw; /* default: .05vw steps: -.1vw, .1vw, .25vw, .45vw */
+
+	}
+
+	/*right eye and socket*/
+	#right_socket{
+		left: 36.5vw;
+		top: 4.95vw;
+
+		height: .75vw;
+		width: 1.35vw;
+	}
+	#right_eye{
+		height: .45vw;
+		width: .45vw;
+
+		top: .05vw; /* default: .05vw steps: -.05vw, .05vw, .2vw, .3vw */
+		left: .15vw; /* default: .15vw range: 0vw, .25vw, .5vw, .75vw */
+
+	}
+
+}
+
+
+
+

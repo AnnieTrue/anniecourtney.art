@@ -17,16 +17,17 @@ function moveEyeRight(x,y){
 // top range: -.1vw to .5vw
 
 	//looking left and right
+	//console.log(EYE_R.getBoundingClientRect().left - x);
 	if(EYE_R.getBoundingClientRect().left - x > 200){
 		//look completely left
 		EYE_R.style.left = 0+'vw';
-	}else if(EYE_R.getBoundingClientRect().left - x < 200 && EYE_R.getBoundingClientRect().left - x > 50){
+	}else if(EYE_R.getBoundingClientRect().left - x < 200 && EYE_R.getBoundingClientRect().left - x > 0){
 		//look slightly left
 		EYE_R.style.left = .25 + 'vw';
-	}else if(EYE_R.getBoundingClientRect().left - x < 10 && EYE_R.getBoundingClientRect().left - x > 0){
+	}else if(EYE_R.getBoundingClientRect().left - x < 0 && EYE_R.getBoundingClientRect().left - x > -200){
 		//look slightly right
 		EYE_R.style.left = .75+'vw';
-	}else if(EYE_R.getBoundingClientRect().left - x < 0){
+	}else if(EYE_R.getBoundingClientRect().left - x < -200){
 		//look completely right
 		EYE_R.style.left = 1+'vw';
 	}

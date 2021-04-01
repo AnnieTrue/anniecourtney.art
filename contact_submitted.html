@@ -4,12 +4,15 @@
 	<!--contact page-->
 	<title>Annie Courtney</title>
 	<link rel = "stylesheet" type = "text/css" href = "genStyle.css" />
+	<link rel="stylesheet" type="text/css" href="contact_style.css"/> <!-- for eye movement -->
 	<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Josefin+Slab&display=swap" rel="stylesheet">
 	<link rel='icon' href='assets/favicon1.svg'/>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script defer src="contact_script.js"></script> <!-- for eye movement -->
 </head>
 <style>
 	.alert {
+	  display: block;
 	  padding-left: 5vw;
 	  padding-right: 5vw;
 	  padding-bottom: 5vw;
@@ -70,7 +73,13 @@
 		text-decoration: none;
 		color: black;
 	}
-	#doodle{
+	#with_pupils{
+		display: block;
+	}
+	#without_pupils{
+		display: none;
+	}
+	.doodle{
 		width: 110vw;
 		height: auto;
 		margin-top: -2vw;
@@ -131,6 +140,7 @@
 		}
 
 	.alert {
+	  display: block;
 	  padding-left: 2vw;
 	  padding-right: 2vw;
 	  padding-bottom: 3vw;
@@ -166,6 +176,7 @@
 			margin-top: -3vw;
 			margin-left: 2.5vw;
 			font-size: 2vw;
+			z-index: 2;
 		}
 		#my_email{
 			margin-top: 0;
@@ -196,11 +207,22 @@
 			text-decoration: none;
 			color: black;
 		}
-		#doodle{
+		#phone{
+			width: 62vw;
+			position: relative;
+		}
+		#with_pupils{
+			display: none;
+		}
+		#without_pupils{
+			display: block;
+		}
+		.doodle{
 			height: auto;
 			width: 62vw;
 			margin-top: -8vw;
 			margin-bottom: 0;
+			z-index: -1;
 		}
 		#email_box{
 			margin: -48.1vw/*top*/ 0/*right*/ 2vw/*bottom*/ 52.5vw/*left*/;
@@ -270,7 +292,14 @@
 		<a href="http://instagram.com/anniecourtney.art" target="_blank" rel="noopener noreferrer"><p id="insta_handle"><img id="insta_icon" src="assets/insta.svg" width="30vw"><a id="insta_text" href="http://instagram.com/anniecourtney.art" target="_blank" rel="noopener noreferrer"> @anniecourtney.art</a></p></a>
 	</div>
 <div id="phone">
-	<img  id="doodle" src="assets/contact_me.png" alt="doodle of girl on phone">
+	<div id="left_socket" class="socket">
+		<div id="left_eye" class="eye"></div>
+	</div>
+	<div id="right_socket" class="socket">
+		<div id="right_eye" class="eye"></div>
+	</div>
+	<img  id="without_pupils" class="doodle" src="assets/contact_me.png" alt="doodle of girl on phone">
+	<img  id="with_pupils" class="doodle" src="assets/contact_me_pupil.png" alt="doodle of girl on phone">
 </div>
 	<div id="email_box">
 		<form action="https://formsubmit.co/annie.t.courtney@gmail.com" 
