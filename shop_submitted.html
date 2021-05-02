@@ -6,13 +6,15 @@
 	<link rel = "stylesheet" type = "text/css" href = "css/genStyle.css" /><!--header style-->
 	<link rel = "stylesheet" type = "text/css" href = "css/shop_eyes.css"/><!--eyes moving-->
 	<link rel="stylesheet" type="text/css" href="css/shop.css"/><!--shop page style-->
+	<link rel="icon" href="assets/favicon1.svg"/><!--favicon-->
 	<link rel="stylesheet" type="text/css" href="css/submitted.css"/><!--submitted alert style-->
-	<link rel='icon' href='assets/favicon1.svg'/><!--favicon-->
 	<script defer src="js/shop.js"></script><!--preview upload and pet portrait slideshow-->
 	<script defer src="js/shop_eyes.js"></script><!--eyes moving-->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> <!--something about everything looking right on ipad? iphone? idk-->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no"> <!--something about everything looking right on ipad? iphone? idk-->
 </head>
 <body>
+
+	<!-- header/nav bar -->
 	<div id="box">
 		<div class="bar1"></div>
 		<div class="bar1 corners"></div>
@@ -21,136 +23,153 @@
   		<div class="bar1 bar2 corners"></div>
   		<div id="nav">
   			<a id="artwork" href="index.html" target="_self">artwork</a>
-  			<img id="dot1"src="assets/dot.svg">
+  			<img id="dot1" src="assets/dot.svg">
   			<a id="shop" class="page_title" href="shop.html" target="_self">shop</a>
   			<img id="dot2" src="assets/dot.svg">
   			<a id="contact" href="contact.html">contact me</a>
 		</div>
 	</div>
-<div id="inner_box">
-<!--page specific-->
 
-<div class="alert">
-  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-  <br>
-  Thank you! Your request has been submitted and I will get back to you as soon as possible. - Annie
-</div>
-
-<div id="slideshow">
-	<div class="slides">
-		<img class="pics" src="assets/commissions/penelope1.JPG">
-	</div>
-	<div class="slides">
-		<img class="pics" src="assets/commissions/pen_tongue.JPG">
-	</div>
-	<div class="slides">
-		<img class="pics" src="assets/commissions/pen_eye.JPG">
-	</div>
-	<div class="slides">
-		<img class="pics" src="assets/commissions/pen_paw.JPG">
-	</div>
-	<div class="slides">
-		<img class="pics" src="assets/commissions/pen_nose.JPG">
-	</div>
-	<div class="slides">
-		<img class="pics" src="assets/commissions/cat1_1.JPG">
-	</div>
-	<div class="slides">
-		<img class="pics" src="assets/commissions/cat1_2.JPG">
-	</div>
-	<div class="slides">
-		<img class="pics" src="assets/commissions/cat1_3.jpeg">
-	</div>
-	<div class="slides">
-		<img class="pics" src="assets/commissions/cat2_1.jpg">
-	</div>
-	<div class="slides">
-		<img class="pics" src="assets/commissions/cat2_2.JPG">
-	</div>
-	<div class="slides">
-		<img class="pics" src="assets/commissions/cat2_3.jpg">
-	</div>
-	<div class="slides">
-		<img class="pics" src="assets/commissions/cat2_4.jpg">
-	</div>
-
-	<button class="slide_button prev" onclick="plusSlides(-1)"><</button>
-	<button class="slide_button next" style="display: inline;" onclick="plusSlides(1)">></button>
-</div>
-
-<div id="heading">
-	<p id="commission">commission a custom painting</p>
-	<p id="estimate"><a href="#estimate_header">click for price estimate</a></p>
-</div>
-
-	<div id="email_box">
-		<form method="POST" action="https://formsubmit.co/annie.t.courtney@gmail.com" enctype="multipart/form-data">
-			<input type="hidden" name="_next" value="https://annietrue.github.io/anniecourtney.art/shop_submitted.html">
-			<input type="text" name="_honey">
-			<input type="hidden" name="_autoresponse" value="Thank you so much for your interest in my work! I will get back to you about your custom painting request as soon as possible. - Annie">
-			<input type="hidden" name="_template" value="box">
-			<!-- hidden formsubmit.co settings ^^^  -->
-			<label for="name">name*</label>
-			<br>
-			<input type="text" id="name" name="name" value="" required>
-			<br>
-			<label for="email">email address*</label>
-			<br>
-			<input type="email" id="email" name="email" value="" required>
-			<br>
-			<label for="dimensions">painting dimensions*</label>
-			<br>
-			<input type="text" id="dimensions" name="dimensions" value="" required>
-			<br>
-			<label for="special_instruations">special instructions</label>
-			<br>
-			<textarea id="special_instruations" name="special_instruations" value=""></textarea>
-			<br>
-			<p>
-				<button type="submit">submit</button>
-
-				<button type="button" class="attach" id="attach" onclick="document.getElementById('upload').click();" />attach&nbsp;&nbsp;image</button>
-				<input type="file" style="display:none;" id="upload" name="upload" accept="image/*" onchange="preview_image(event)"/>
-			</p>
-			<img id="output_image"/>
-		</form>
-	</div>
-<!-- estimate stuff below -->
-<div id="estimate_heading">
-  	<div class="estimate_bar "></div>
-  	<div class="estimate_bar corner"></div>
-	<p id="estimate_header">Custom Painting Pricing</p>
-</div>
-<div id="doodles">
-	<img id="doodle" src="assets/hanging_pictures.png">
-	<div id="right_socket_left" class="socket">
-		<div id="right_eye_left" class="eye"></div>
-	</div>
-	<div id="left_socket_left" class="socket">
-		<div id="left_eye_left" class="eye"></div>
-	</div>
-	<img id="doodle_left" src="assets/hanging_left.png">
-	<div id="socket_right" class="socket">
-		<div id="eye_right" class="eye"></div>
-	</div>
-	<img id="doodle_right" src="assets/hanging_right.png">
-	<div id="calc_box">
-		<input type="number" id="length" value="0">
-		inches by 
-		<input type="number" id="width" value="0">
-		inches
+	<div class="alert">
+		<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
 		<br>
-		<br>
-		<button type="button"
-		onclick="document.getElementById('output_price').innerHTML = output(); document.getElementById('output_info').innerHTML = output_info();">
-		estimate&nbsp;&nbsp;price</button>
-			<p id="output_price"></p>
-			<br>
-			<a id="output_info"></a>
+		Thank you! Your request has been submitted and I will get back to you as soon as possible. - Annie
 	</div>
-</div>
-<!-- ^^^ page specific ^^^ -->
-</div>
+
+	<div id="inner_box">
+
+		<!-- ----------------------------------------------------------------------- -->
+		<!--                             commission_container                        -->
+		<!-- ----------------------------------------------------------------------- -->
+		<div id="commission_container">
+
+			<!-- photos and commission order heading -->
+ 			<div id="photosANDheading">
+				<!-- commission heading for desktop-->
+				<div id="top_heading" class="heading">
+					<div id="commission">commission a custom painting</div>
+					<div id="commission_bar"></div>
+					<div id="estimate_link"><a href="#estimate_header">- click for price estimate -</a></div>
+				</div>
+
+				<div id="slideshow">
+					<button id="prev" class="slide_button prev">&#8592;</button>
+					<div id="portrait"></div>
+					<button id="next" class="slide_button next">&#8594;</button> 
+				</div>
+				
+				<!-- commission heading -->
+				<div id="bottom_heading" class="heading">
+					<div id="commission">commission a custom painting</div>
+					<div id="commission_bar"></div>
+					<div id="estimate_link"><a href="#estimate_container">- click for price estimate -</a></div>
+				</div> 
+			</div>	
+			
+			<!-- email form to oder a commission -->
+			<div id="email_box">
+				<form method="POST" action="https://formsubmit.co/annie.t.courtney@gmail.com" enctype="multipart/form-data">
+					<input type="hidden" name="_next" value="https://annietrue.github.io/anniecourtney.art/shop_submitted.html">
+					<input type="text" name="_honey">
+					<input type="hidden" name="_autoresponse" value="Thank you so much for your interest in my work! I will get back to you about your custom painting request as soon as possible. - Annie">
+					<input type="hidden" name="_template" value="box">
+					<!-- hidden formsubmit.co settings ^^^  -->
+					<label for="name">name*</label>
+					<input type="text" id="name" name="name" value="" required>
+
+					<label for="email">email address*</label>
+					<input type="email" id="email" name="email" value="" required>
+					
+					<label for="dimensions">painting dimensions*</label>
+					<input type="text" id="dimensions" name="dimensions" value="" required>
+					
+					<label for="special_instruations">special instructions</label>
+					<textarea id="special_instruations" name="special_instruations" value=""></textarea>
+					
+					<div id="buttons">
+						<div id="uploaded">
+							<img id="clip" src="assets/clip.png">
+							<img id="output_image"/>
+						</div>
+						<button type="button" class="attach" id="attach" onclick="document.getElementById('upload').click();" >attach&nbsp;&nbsp;image</button>
+						<button type="submit">submit</button>
+						<input type="file" style="display:none;" id="upload" name="upload" accept="image/*" onchange="preview_image(event)"/>
+					</div>
+					
+				</form> 
+			</div> 
+		</div>
+
+
+		<!-- ----------------------------------------------------------------------- -->
+		<!--                           estimate_container                            -->
+		<!-- ----------------------------------------------------------------------- -->
+		<div id="estimate_container">
+
+			<div id="estimate_bar">
+				<!-- <div class="estimate_bar "></div>
+				<div class="estimate_bar corner"></div> -->
+				<div id="estimate_header">Custom Painting Pricing</div>
+			</div>
+
+			<div id="estimate_content">
+				<div id="one_doodle_box">
+					<div id="right_socket_left" class="socket">
+						<div id="right_eye_left_mobile" class="eye"></div>
+					</div>
+					<div id="left_socket_left" class="socket">
+						<div id="left_eye_left_mobile" class="eye"></div>
+					</div>
+										<div id="socket_right" class="socket">
+						<div id="eye_right_mobile" class="eye"></div>
+					</div>
+	 				<img id="doodle" src="assets/hanging_pictures.png">
+				</div>
+
+				 <div id="left_doodle_box">
+					<div id="right_socket_left" class="socket">
+						<div id="right_eye_left" class="eye"></div>
+					</div>
+					<div id="left_socket_left" class="socket">
+						<div id="left_eye_left" class="eye"></div>
+					</div>
+					<img id="doodle_left" src="assets/hanging_left.png">
+				</div>
+
+				<div id="calc_box">
+
+					<div id="calc_inputs">
+						<input type="number" id="length" value="0">
+						<div id="inches_by">inches by</div>
+						<input type="number" id="width" value="0">
+						<div id="inches">inches</div>
+					</div>
+
+					<div id="estimate_bttn" type="button"
+					onclick="document.getElementById('output_price').innerHTML = output(); document.getElementById('output_info').innerHTML = output_info();">
+					estimate price</div>
+
+					<div id="output_price"></div>
+
+					<div id="output_info"></div>
+
+				</div>
+				
+				<div id="right_doodle_box">
+					<div id="socket_right" class="socket">
+						<div id="eye_right" class="eye"></div>
+					</div>
+					<img id="doodle_right" src="assets/hanging_right.png">
+				</div>
+
+			</div>
+
+		</div> 
+
+
+	</div>
+
 	<div id="footer">All work &#169; Annie Courtney unless otherwise  noted.</div>
+	
 </body>
 </html> 

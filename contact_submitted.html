@@ -12,6 +12,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> <!--something about everything looking right on ipad? iphone? idk-->
 </head>
 <body>
+
+	<!-- header/nav bar -->
 	<div id="box">
 		<div class="bar1"></div>
 		<div class="bar1 corners"></div>
@@ -26,58 +28,87 @@
   			<a id="contact" class="page_title" href="contact.html">contact me</a>
 		</div>
 	</div>
-<div id="inner_box">
-<!--page specific-->
 
-<div class="alert">
-  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-  <br>
-  Thank you! Your message has been sent and I will get back to you as soon as possible. - Annie
-</div>
+	<!-- successfully submitted message -->
+	<div class="alert">
+		<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+		<br>
+		Thank you! Your message has been sent and I will get back to you as soon as possible. - Annie
+	</div>
 
-	<div id="handles">
-		<a href="mailto:annie.t.courtney@gmail.com"><p id="my_email"><img id="puffalope" src="assets/mail.svg" width="30vw"><a id="email_text" href="mailto:annie.t.courtney@gmail.com"> annie.t.courtney@gmail.com</a></p></a>
-		<a href="http://instagram.com/anniecourtney.art" target="_blank" rel="noopener noreferrer"><p id="insta_handle"><img id="insta_icon" src="assets/insta.svg" width="30vw"><a id="insta_text" href="http://instagram.com/anniecourtney.art" target="_blank" rel="noopener noreferrer"> @anniecourtney.art</a></p></a>
+	<!-- contact page content -->
+	<div id="inner_box">
+
+		<!-- ----------------------------------------------------------------------- -->
+		<!--                             contact handles                             -->
+		<!-- ----------------------------------------------------------------------- -->
+
+		<div id="handles">
+			<div id="email_container">
+				<div>
+					<a href="mailto:annie.t.courtney@gmail.com"><img id="puffalope" src="assets/mail.svg"></a>
+				</div>
+				<div>
+					<a id="email_text" href="mailto:annie.t.courtney@gmail.com"> annie.t.courtney@gmail.com</a>
+				</div>
+			</div>
+			<div id="insta_container">
+				<div>
+					<a href="http://instagram.com/anniecourtney.art" target="_blank" rel="noopener noreferrer"><img id="insta_icon" src="assets/insta.svg" width="30vw"></a>
+				</div>
+				<div id="insta_text">
+					<a href="http://instagram.com/anniecourtney.art" target="_blank" rel="noopener noreferrer"> @anniecourtney.art</a>
+				</div>
+			</div>
+		</div>
+
+		<!-- ----------------------------------------------------------------------- -->
+		<!--                                 drawing                                 -->
+		<!-- ----------------------------------------------------------------------- -->
+
+		<div id="phone">
+			<div id="left_socket" class="socket">
+				<div id="left_eye" class="eye"></div>
+			</div>
+			<div id="right_socket" class="socket">
+				<div id="right_eye" class="eye"></div>
+			</div>
+			<img  id="without_pupils" class="doodle" src="assets/contact_me.png" alt="doodle of girl on phone">
+			<img  id="with_pupils" class="doodle" src="assets/contact_me_pupil.png" alt="doodle of girl on phone">
+		</div>
+
+		<!-- ----------------------------------------------------------------------- -->
+		<!--                               email form                                -->
+		<!-- ----------------------------------------------------------------------- -->
+
+		<div id="email_box">
+			<form action="https://formsubmit.co/annie.t.courtney@gmail.com" method="POST">
+				<input type="hidden" name="_next" value="https://annietrue.github.io/anniecourtney.art/contact_submitted.html">
+				<input type="text" name="_honey">
+				<input type="hidden" name="_autoresponse" value="Thanks so much for reaching out! I will get back to you as soon as possible. - Annie">
+				<input type="hidden" name="_template" value="box">
+				<!-- hidden formsubmit.co settings ^^^  -->
+				<label for="name">name*</label>
+				<br>
+				<input type="text" id="name" name="name" value="" required>
+				<br>
+				<label for="email_address">email address*</label>
+				<br>
+				<input type="email" id="email_address" name="email" value="" required>
+				<br>
+				<label for="subject">subject*</label>
+				<br>
+				<input type="text" id="subject" name="subject" value="" required>
+				<br>
+				<label for="message">message*</label>
+				<br>
+				<textarea id="message" name="message" value="" required></textarea>
+				<br>
+				<button type="submit">submit</button>
+			</form> 
+		</div> 
+
 	</div>
-<div id="phone">
-	<div id="left_socket" class="socket">
-		<div id="left_eye" class="eye"></div>
-	</div>
-	<div id="right_socket" class="socket">
-		<div id="right_eye" class="eye"></div>
-	</div>
-	<img  id="without_pupils" class="doodle" src="assets/contact_me.png" alt="doodle of girl on phone">
-	<img  id="with_pupils" class="doodle" src="assets/contact_me_pupil.png" alt="doodle of girl on phone">
-</div>
-	<div id="email_box">
-		<form action="https://formsubmit.co/annie.t.courtney@gmail.com" 
-method="POST">
-			<input type="hidden" name="_next" value="https://annietrue.github.io/anniecourtney.art/contact_submitted.html">
-			<input type="text" name="_honey">
-			<input type="hidden" name="_autoresponse" value="Thanks so much for reaching out! I will get back to you as soon as possible. - Annie">
-			<input type="hidden" name="_template" value="box">
-			<!-- hidden formsubmit.co settings ^^^  -->
-			<label for="name">name*</label>
-			<br>
-			<input type="text" id="name" name="name" value="" required>
-			<br>
-			<label for="email_address">email address*</label>
-			<br>
-			<input type="email" id="email_address" name="email" value="" required>
-			<br>
-			<label for="subject">subject*</label>
-			<br>
-			<input type="text" id="subject" name="subject" value="" required>
-			<br>
-			<label for="message">message*</label>
-			<br>
-			<textarea id="message" name="message" value="" required></textarea>
-			<br>
-			<button type="submit">submit</button>
-		</form>
-	</div>
-<!-- ^^^ page specific ^^^ -->
-</div>
 	<div id="footer">All work &#169; Annie Courtney unless otherwise  noted.</div>
 </body>
 </html>

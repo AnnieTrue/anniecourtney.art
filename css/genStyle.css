@@ -11,7 +11,8 @@ their parent containers when they have padding*/
 body{
 	font-family: 'Josefin Slab', serif;
 	margin: 0px;
-	font-size: 98pt; /*the font size that all font percentages will be referencing*/
+	/*font-size: 98pt; /~the font size that all font percentages will be referencing~/*/
+
 
 /*polka dots below*/
 /* 	background-image: radial-gradient(#f2f2f2 5%, transparent 5%), radial-gradient(#f2f2f2 5%, transparent 5%);
@@ -20,6 +21,9 @@ body{
   	background-position: 0% 0%, 50% 50%;
   	background-size: 5% 10%;*/
 
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
 
 
 }
@@ -27,7 +31,7 @@ body{
 	display: flex;
 	flex: 0 1 auto;
 	flex-direction: column;
-	margin-bottom: 4vh;
+	margin-bottom: 1vh;
 }
 #nav {
 	position: relative;
@@ -38,7 +42,7 @@ body{
 	margin-right: 13.5vw;
 	margin-left: auto;
 	margin-top: 1vw;
-	margin-bottom: 5vw;
+	margin-bottom: 3vw;
 }
 #nav a{
 	color: black;
@@ -96,12 +100,14 @@ body{
     padding-bottom: 15vw;
 }
 #footer{
-	position: static;
+/*	position: absolute;*/
 	text-align: center;
 	font-size: 4vw;
 	width: 100%;
-	bottom:0;
-	padding-bottom: 3.5vw;
+	margin-top: 8vw;
+	padding-bottom: 2vw;
+/*	bottom:0;*/
+/*	padding-bottom: 3.5vw;*/
 }
 
 /*dektop stuff below*/
@@ -172,7 +178,14 @@ body{
 
 	}
 	#footer{
+		margin-top: 2vw;
 		font-size: 2.5vw;
 		padding-bottom: 1vw;
+
+/* 
+		position: absolute;
+		bottom: -8vw;
+		font-size: 2.5vw;
+		padding-bottom: 1vw; */
 	}
 }

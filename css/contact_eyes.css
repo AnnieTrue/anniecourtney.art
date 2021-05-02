@@ -1,9 +1,66 @@
-.eye{
+/* .eye{
 	display: none;
 }
 .socket{
 	display: none;
-}
+} */
+	/*general eye classes*/
+	.eye{
+		display: block;
+		position: relative;
+		background-color: black;
+		height: .5vw;
+		width: .5vw;
+		border-radius: 50%;
+		z-index: 100; /*above everything so high number*/
+
+	}
+	.socket{
+		display: block;
+		position: absolute;
+		overflow: hidden;
+		height: 1vw;
+		width: 1.5vw;
+		z-index: 99; /*just below the eyes*/
+	}
+
+	/*left eye and socket*/
+	#left_socket{
+		margin-left: 61.25vw;
+		margin-top: 17.65vw;
+
+		height: 1.08vw;
+		width: 1.35vw;
+
+		/* background-color: rgba(100,0,0,.5); */
+	}
+	#left_eye{
+		height: .85vw;
+		width: .85vw;
+
+		top: .01vw; /* default: .01vw steps: -.05vw, .01vw, .15vw, .3vw */
+		left: .05vw; /* default: .05vw steps: -.1vw, .1vw, .25vw, .45vw */
+
+	}
+
+	/*right eye and socket*/
+	#right_socket{
+		margin-left: 67.65vw;
+		margin-top: 19.5vw;
+
+		height: 1.25vw;
+		width: 1.85vw;
+
+		/* background-color: rgba(100,0,0,.5); */
+	}
+	#right_eye{
+		height: .95vw;
+		width: .95vw;
+
+		top: .05vw; /* default: .05vw steps: -.05vw, .05vw, .2vw, .3vw */
+		left: .15vw; /* default: .15vw range: 0vw, .25vw, .5vw, .75vw */
+
+	}
 @media (min-width: 992px), (orientation: landscape) {
 
 	/*general eye classes*/
@@ -24,16 +81,19 @@
 		height: 1vw;
 		width: 1.5vw;
 		z-index: 99; /*just below the eyes*/
+	
 
 	}
 
 	/*left eye and socket*/
 	#left_socket{
-		left: 33.1vw;
-		top: 3.9vw;
+		margin-left: 32.4vw;
+		margin-top: 11.35vw;
 
 		height: .58vw;
 		width: .85vw;
+
+		/* background-color: rgba(100,0,0,.5); */
 	}
 	#left_eye{
 		height: .35vw;
@@ -46,11 +106,13 @@
 
 	/*right eye and socket*/
 	#right_socket{
-		left: 36.5vw;
-		top: 4.95vw;
+		margin-left: 35.8vw;
+		margin-top: 12.4vw;
 
 		height: .75vw;
 		width: 1.35vw;
+
+		/* background-color: rgba(100,0,0,.5); */
 	}
 	#right_eye{
 		height: .45vw;

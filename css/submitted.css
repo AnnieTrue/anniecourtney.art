@@ -10,9 +10,10 @@
   color: white;
   font-family: 'Josefin Slab', serif;
   font-weight: 700;
-  font-size: 5vw;
+  font-size: 4vw;
+  line-height: 6vw;
   margin-top: 1vw;
-  margin-bottom: 10vw;
+  margin-bottom: 5vw;
   width: 100%;
 }
 .closebtn {
@@ -44,6 +45,7 @@
     font-family: 'Josefin Slab', serif;
     font-weight: 700;
     font-size: 2vw;
+    line-height: 3vw;
     margin-top: -1vw;
     margin-bottom: 6vw;
     width: 100%;

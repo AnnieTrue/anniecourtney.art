@@ -1,41 +1,74 @@
+
+/* -------------------------------------------------------------------------- */
+/*                               preview upload                               */
+/* -------------------------------------------------------------------------- */
 function preview_image(event){
 	var reader = new FileReader();
 	reader.onload = function(){
  		var output = document.getElementById('output_image');
 		output.src = reader.result;
+		document.getElementById('clip').style.display = 'block';
  	}
  	reader.readAsDataURL(event.target.files[0]);
 }
 
-var slideIndex = 1;
-showSlides(slideIndex);
+/* -------------------------------------------------------------------------- */
+/*                               slideshow stuff                              */
+/* -------------------------------------------------------------------------- */
+const portrait = document.getElementById('portrait');
+const prev_bttn = document.getElementById('prev');
+const next_bttn = document.getElementById('next');
 
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  var i;
-  var s = document.getElementsByClassName("slides");
-  // var dots = document.getElementsByClassName("dot");
-  if (n > s.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = s.length}
-  for (i = 0; i < s.length; i++) {
-      s[i].style.display = "none";  
-  }
-  // for (i = 0; i < dots.length; i++) {
-  //     dots[i].className = dots[i].className.replace(" active", "");
-  // }
-  s[slideIndex-1].style.display = "block";  
-  // dots[slideIndex-1].className += " active";
-}
+var images = [
+	'<img class="pics" src="assets/commissions/penelope1.JPG">',
+	'<img class="pics" src="assets/commissions/pen_tongue.JPG">',
+	'<img class="pics" src="assets/commissions/pen_eye.JPG">',
+	'<img class="pics" src="assets/commissions/pen_paw.JPG">',
+	'<img class="pics" src="assets/commissions/pen_nose.JPG">',
+	'<img class="pics" src="assets/commissions/cat1_1.JPG">',
+	'<img class="pics" src="assets/commissions/cat1_2.JPG">',
+	'<img class="pics" src="assets/commissions/cat1_3.jpeg">',
+	'<img class="pics" src="assets/commissions/cat2_1.jpg">',
+	'<img class="pics" src="assets/commissions/cat2_2.JPG">',
+	'<img class="pics" src="assets/commissions/cat2_3.jpg">',
+	'<img class="pics" src="assets/commissions/cat2_4.jpg">'
+]
 
 
-// estimate stuff below
+
+//when the page loads have the slideshow start at the first photo
+portrait.innerHTML = images[0];
+currentImage = 0; //the index of the image currently being displayed
+
+prev_bttn.addEventListener('click', (event) =>{
+	event.preventDefault();
+
+	if(currentImage != 0){
+		portrait.innerHTML = images[currentImage - 1];
+		currentImage--;
+	}else{
+		portrait.innerHTML = images[images.length - 1];
+		currentImage = images.length - 1;
+	}
+
+})
+
+next_bttn.addEventListener('click', (event) =>{
+	event.preventDefault();
+
+	if(currentImage != images.length - 1){
+		portrait.innerHTML = images[currentImage + 1];
+		currentImage++;
+	}else{
+		portrait.innerHTML = images[0];
+		currentImage = 0;
+	}
+
+})
+
+/* -------------------------------------------------------------------------- */
+/*                            estimate calculation                            */
+/* -------------------------------------------------------------------------- */
 function lowEstimate(x,y){
 	z = x*y;
 
@@ -81,3 +114,26 @@ function output(){
 function output_info(){
 	return '(depending on the level of detail)';
 }
+
+/* -------------------------------------------------------------------------- */
+/*                         click image for larger view                        */
+/* -------------------------------------------------------------------------- */
+
+portrait.addEventListener('click', () => {
+
+	console.log(currentImage)
+
+	var modal = document.createElement('div')
+
+	modal.classList.add('modal');
+
+	modal.innerHTML = images[currentImage]
+
+
+	document.getElementById('inner_box').appendChild(modal)
+
+	modal.addEventListener('click', () => {
+		document.getElementById('inner_box').removeChild(modal)
+	})
+
+})
