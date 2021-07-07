@@ -255,59 +255,78 @@ selected little icon
 	    grid-row-start: 9;
 	    grid-row-end: 12;
 	}
-	#scream{
+	#penelope{
 		grid-column-start: 1;
-	    grid-column-end: 9;
-	    grid-row-start: 12;
-	    grid-row-end: 15;
-	}
-	#flower{
-		grid-column-start: 9;
-	    grid-column-end: 16;
+	    grid-column-end: 6;
 	    grid-row-start: 12;
 	    grid-row-end: 16;
+	}
+	#cat2{
+		grid-column-start: 6;
+	    grid-column-end: 11;
+	    grid-row-start: 12;
+	    grid-row-end: 16;
+	}
+	#cat1{
+		grid-column-start: 11;
+	    grid-column-end: 16;
+	    grid-row-start: 12;
+	    grid-row-end: 14;
+	}
+	#abstract{
+		grid-column-start: 11;
+		grid-column-end: 16;
+	    grid-row-start: 14;
+	    grid-row-end: 16;
+	}
+	#scream{
+		grid-column-start: 1;
+	    grid-column-end: 8;
+	    grid-row-start: 16;
+	    grid-row-end: 18;
+	}
+	#flower{
+		grid-column-start: 8;
+	    grid-column-end: 16;
+	    grid-row-start: 16;
+	    grid-row-end: 20;
 	}
 	#earthling{
 		grid-column-start: 1;
 		grid-column-end: 5;
-	    grid-row-start: 15;
-	    grid-row-end: 18;
+	    grid-row-start: 18;
+	    grid-row-end: 20;
 	}
 	#mouth{
 		grid-column-start: 5;
-	    grid-column-end: 9;
-	    grid-row-start: 15;
-	    grid-row-end: 18;
+	    grid-column-end: 8;
+	    grid-row-start: 18;
+	    grid-row-end: 20;
 	}
-	#abstract{
-		grid-column-start: 9;
-		grid-column-end: 16;
-	    grid-row-start: 16;
-	    grid-row-end: 18;
-	}
+
 	#privacy{
 		grid-column-start: 1;
 	    grid-column-end: 9;
-	    grid-row-start: 18;
-	    grid-row-end: 21;
+	    grid-row-start: 20;
+	    grid-row-end: 23;
 	}
 	#self{
 		grid-column-start: 9;
 	    grid-column-end: 16;
-	    grid-row-start: 18;
-	    grid-row-end: 21;
+	    grid-row-start: 20;
+	    grid-row-end: 23;
 	}
 	#moai{
 		grid-column-start: 1;
 	    grid-column-end: 8;
-	    grid-row-start: 21;
-	    grid-row-end: 24;
+	    grid-row-start: 23;
+	    grid-row-end: 26;
 	}
 	#spider{
 		grid-column-start: 8;
 	    grid-column-end: 16;
-	    grid-row-start: 21;
-	    grid-row-end: 24;
+	    grid-row-start: 23;
+	    grid-row-end: 26;
 	}
 
 /* back to top button */
