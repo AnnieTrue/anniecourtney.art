@@ -24,14 +24,13 @@ var images = [
 	'<img class="pics" src="assets/commissions/pen_tongue.JPG">',
 	'<img class="pics" src="assets/commissions/pen_eye.JPG">',
 	'<img class="pics" src="assets/commissions/pen_paw.JPG">',
-	'<img class="pics" src="assets/commissions/pen_nose.JPG">',
 	'<img class="pics" src="assets/commissions/cat1_1.JPG">',
-	'<img class="pics" src="assets/commissions/cat1_2.JPG">',
-	'<img class="pics" src="assets/commissions/cat1_3.jpeg">',
 	'<img class="pics" src="assets/commissions/cat2_1.jpg">',
-	'<img class="pics" src="assets/commissions/cat2_2.JPG">',
 	'<img class="pics" src="assets/commissions/cat2_3.jpg">',
-	'<img class="pics" src="assets/commissions/cat2_4.jpg">'
+	'<img class="pics" src="assets/commissions/kaya.JPG">',
+	'<img class="pics" src="assets/commissions/kaya2.JPG">',
+	'<img class="pics" src="assets/commissions/sprinksFrame.jpg">',
+	'<img class="pics" src="assets/commissions/sprinks2.jpg">'
 ]
 
 
@@ -86,7 +85,13 @@ function lowEstimate(x,y){
 
 	hours = (15 * ((z/2)/16))+(7.5*((z/2)/16)); //low estimate (only half of the canvas is full detail (ie full hour rate), (other half is half rate))
 
-	return Math.ceil(canvas + paint + hours);
+	total = Math.ceil(canvas + paint + hours)
+	// $50 min
+	if (total<50 && z != 0){
+		total = 50
+	}
+
+	return total;
 
 }
 function highEstimate(x,y){
@@ -106,7 +111,13 @@ function highEstimate(x,y){
 
 	hours = 15 * (z/16); //high estimate (the whole canvas is full detail)
 
-	return Math.ceil(canvas + paint + hours);
+	total = Math.ceil(canvas + paint + hours)
+	// $50 min
+	if (total<50 && z != 0){
+		total = Math.ceil(50 + total/2)
+	}
+
+	return total;
 }
 function output(){
 	return '$'+lowEstimate(document.getElementById('length').value, document.getElementById('width').value)+' - $'+highEstimate(document.getElementById('length').value, document.getElementById('width').value);
