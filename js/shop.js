@@ -41,27 +41,27 @@ currentImage = 0; //the index of the image currently being displayed
 
 prev_bttn.addEventListener('click', (event) =>{
 	event.preventDefault();
-
-	if(currentImage != 0){
-		portrait.innerHTML = images[currentImage - 1];
-		currentImage--;
-	}else{
-		portrait.innerHTML = images[images.length - 1];
-		currentImage = images.length - 1;
-	}
+	goback()
+	// if(currentImage != 0){
+	// 	portrait.innerHTML = images[currentImage - 1];
+	// 	currentImage--;
+	// }else{
+	// 	portrait.innerHTML = images[images.length - 1];
+	// 	currentImage = images.length - 1;
+	// }
 
 })
 
 next_bttn.addEventListener('click', (event) =>{
 	event.preventDefault();
-
-	if(currentImage != images.length - 1){
-		portrait.innerHTML = images[currentImage + 1];
-		currentImage++;
-	}else{
-		portrait.innerHTML = images[0];
-		currentImage = 0;
-	}
+	gonext()
+	// if(currentImage != images.length - 1){
+	// 	portrait.innerHTML = images[currentImage + 1];
+	// 	currentImage++;
+	// }else{
+	// 	portrait.innerHTML = images[0];
+	// 	currentImage = 0;
+	// }
 
 })
 
@@ -130,21 +130,81 @@ function output_info(){
 /*                         click image for larger view                        */
 /* -------------------------------------------------------------------------- */
 
+function goback(){
+	if(currentImage != 0){
+		currentImage--;
+	}else{
+		currentImage = images.length - 1;
+	}
+	portrait.innerHTML = images[currentImage]
+}
+
+function gonext(){
+	if(currentImage != images.length - 1){
+		currentImage++;
+	}else{
+		currentImage = 0;
+	}
+	portrait.innerHTML = images[currentImage]
+}
+
+
+
+
 portrait.addEventListener('click', () => {
 
 	console.log(currentImage)
 
+modalOpen = true
 	var modal = document.createElement('div')
+	var buttonDiv = document.createElement('div') //the buttons have to be separate from modal so that you can click on modal to close
+	buttonDiv.classList.add('popButtons')
 
 	modal.classList.add('modal');
 
-	modal.innerHTML = images[currentImage]
+	var next = document.createElement('button')
+	next.innerHTML = "&#8594;"
+	next.classList.add('slide_button')
+	next.classList.add('popupNext')
 
 
+	var back = document.createElement('button')
+	back.innerHTML = "&#8592;"
+	back.classList.add('slide_button')
+	back.classList.add('popupBack')
+
+
+	// document.getElementById('inner_box').appendChild(back)
+	// modal.appendChild(back)
 	document.getElementById('inner_box').appendChild(modal)
+	// modal.appendChild(next)
+	// document.getElementById('inner_box').appendChild(next)
+
+	modal.innerHTML += images[currentImage]
+
+
+	buttonDiv.appendChild(back)
+	buttonDiv.appendChild(next)
+	document.getElementById('inner_box').appendChild(buttonDiv)
+
+	next.onclick = () =>{
+		gonext()
+		modal.innerHTML = "" //clear the modal
+		modal.innerHTML += images[currentImage]
+	} 
+
+
+	back.onclick = () =>{
+		goback()
+		modal.innerHTML = "" //clear the modal
+		modal.innerHTML += images[currentImage]
+
+	} 
+
 
 	modal.addEventListener('click', () => {
 		document.getElementById('inner_box').removeChild(modal)
+		document.getElementById('inner_box').removeChild(buttonDiv)
 	})
 
 })
