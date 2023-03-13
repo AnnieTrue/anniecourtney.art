@@ -71,25 +71,25 @@ next_bttn.addEventListener('click', (event) =>{
 function lowEstimate(x,y){
 	z = x*y;
 
-	canvas = 0;
-
-	if(z<200){
-		canvas=z*.1
-	}else if(z<1300){
-		canvas=z*.05
-	}else{
-		canvas=z*.01;
+	if (z==0){
+		return 0;
 	}
+
+	canvas=z*.1
 
 	paint = 10 * (z/100);
 
-	hours = (15 * ((z/2)/16))+(7.5*((z/2)/16)); //low estimate (only half of the canvas is full detail (ie full hour rate), (other half is half rate))
+	hours = (30 * ((z/2)/16))+(15*((z/2)/16)); //low estimate (only half of the canvas is full detail (ie full hour rate), (other half is half rate))
+	hours = hours + (3*30) //design, plan, sketch
 
 	total = Math.ceil(canvas + paint + hours)
-	// $50 min
-	if (total<50 && z != 0){
-		total = 50
+	// $100 min
+	if (total<100 && z != 0){
+		total = 100
 	}
+
+	tax = .04 //NYS tax
+	total = Math.ceil(total + total*tax)
 
 	return total;
 
@@ -97,25 +97,26 @@ function lowEstimate(x,y){
 function highEstimate(x,y){
 	z = x*y;
 
-	canvas = 0;
-
-	if(z<200){
-		canvas=z*.1
-	}else if(z<1300){
-		canvas=z*.05
-	}else{
-		canvas=z*.01;
+	if (z==0){
+		return 0;
 	}
+
+	canvas=z*.1
 
 	paint = 10 * (z/100);
 
-	hours = 15 * (z/16); //high estimate (the whole canvas is full detail)
+	hours = 30 * (z/16); //high estimate (the whole canvas is full detail)
+
+	hours = hours + (3*30) //design, plan, sketch
 
 	total = Math.ceil(canvas + paint + hours)
-	// $50 min
-	if (total<50 && z != 0){
-		total = Math.ceil(50 + total/2)
+	// $100 min
+	if (total<100 && z != 0){
+		total = 100
 	}
+
+	tax = .04 //NYS tax
+	total = Math.ceil(total + total*tax)
 
 	return total;
 }
