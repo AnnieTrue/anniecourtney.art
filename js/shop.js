@@ -29,6 +29,9 @@ var images = [
 	'<img class="pics" src="assets/commissions/cat2_3.jpg">',
 	'<img class="pics" src="assets/commissions/kaya.JPG">',
 	'<img class="pics" src="assets/commissions/kaya2.JPG">',
+	'<img class="pics" src="assets/commissions/together1.png">',
+	'<img class="pics" src="assets/commissions/cap.png">',
+	'<img class="pics" src="assets/commissions/olive.png">',
 	'<img class="pics" src="assets/commissions/sprinksFrame.jpg">',
 	'<img class="pics" src="assets/commissions/sprinks2.jpg">'
 ]
